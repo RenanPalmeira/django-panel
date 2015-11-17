@@ -1,8 +1,29 @@
 {% extends "base.html" %}
+{% load compress %}
 {% block content %}
-	{% for app in apps %}
-		<div class="app-icon" style="background-color: {{ app.color }}">
-			<span class="{{ app.icon }}"></span>
+	<header>
+		<div class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+			<div class="container"> 
+				<div class="navbar-header">
+					{% if client.name %}
+						<a href="/" class="navbar-brand">{{ client.name }}</a>
+					{% else %}
+						<a href="/" class="navbar-brand">Django-Panel</a>
+					{% endif %}
+				</div> 
+			</div> 
 		</div>
-	{% endfor %}
+	</header>
+	<div class="container">
+		<div class="row">
+			{% for app in apps %}
+				<div class="case-app text-center app-cursor">
+					<div class="app-icon" style="background-color: {{ app.color }};">
+						<span class="{{ app.icon }}"></span>
+					</div>
+					<div class="app-title">{{ app.name|title }}</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
 {% endblock %}

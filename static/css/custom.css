@@ -3,9 +3,10 @@ body {
 	font-family: "Roboto", "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
 	font-size: 14px;
 }
-
+header {
+	min-height: 100px;
+}
 .octicon {
-	
 	font: normal normal normal 16px/1 octicons;
 	display: inline-block;
 	text-decoration: none;
@@ -13,15 +14,33 @@ body {
 	font-size: 32px;
 	min-width: 32px;
 }
-
+.navbar {
+    min-height: 40px;
+    border-bottom: 2px solid rgba(0,0,0, 0.2);
+}
+.navbar-brand {
+    height: 45px;
+    line-height: 13px;
+}
+.case-app {
+    position: relative;
+    margin: 0px;
+    float: left;
+    width: 138px;
+    height: 140px;
+}
+.app-cursor {
+	cursor: pointer;
+}
 .app-title {
 	font-weight: bold;
+	font-size: 12px;
 	letter-spacing: 0.4px;
 	white-space: nowrap;
+	padding-top: 10px;
 	text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5), 0px 1px 5px rgba(0, 0, 0, 0.5);
 	color: #fff;
 }
-
 .app-icon {
 	color: #fff;
 	border-radius: 16px;
@@ -32,11 +51,9 @@ body {
 	padding: 20px;
 	text-align: center;
 }
-
 .app-icon.green {
 	background-color: #16723e;
 }
-
 .app-icon.yellow-ligth {
 	background-color: #d4ec9f;
 	color: #000;

@@ -4,7 +4,7 @@ from django.shortcuts import render
 from app.core.models import Application
 
 def home(request):
-	apps = Application.objects.all()
+	apps = Application.objects.filter(status=1).order_by('order')
 	context = {
 		"apps": apps
 	}
