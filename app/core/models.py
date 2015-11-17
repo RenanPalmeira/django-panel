@@ -6,13 +6,14 @@ class Application(models.Model):
 	slug = models.SlugField()
 	icon = models.CharField(max_length=155)
 	color = models.CharField(max_length=155)
+	order = models.SmallIntegerField(null=True, blank=False)
 	
 	update_date = models.DateTimeField(auto_now=True)
 	create_date = models.DateTimeField(auto_now_add=True)
 	status = models.SmallIntegerField(default=1)
 
 	def __unicode__(self):
-		return name
+		return self.name
 
 	class Meta:
 		db_table = "application"
