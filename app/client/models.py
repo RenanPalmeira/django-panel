@@ -16,7 +16,7 @@ class Client(models.Model):
 	status = models.SmallIntegerField(default=1)
 
 	def __unicode__(self):
-		return client
+		return self.client
 
 	class Meta:
 		db_table = "client"

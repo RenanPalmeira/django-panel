@@ -1,6 +1,6 @@
 body {
 	background-color: #03669a;
-	font-family: "Roboto", "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
+	font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
 	font-size: 14px;
 }
 header {
@@ -20,6 +20,7 @@ header {
 }
 .navbar-brand {
     height: 45px;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
     line-height: 13px;
 }
 .case-app {
@@ -57,4 +58,14 @@ header {
 .app-icon.yellow-ligth {
 	background-color: #d4ec9f;
 	color: #000;
+}
+#loading{
+	visibility: hidden;
+	position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
 }

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load compress %}
 {% block content %}
+	<div id="loading"></div>
 	<header>
 		<div class="navbar navbar-default navbar-fixed-top" role="navigation"> 
 			<div class="container"> 
@@ -17,7 +18,7 @@
 	<div class="container">
 		<div class="row">
 			{% for app in apps %}
-				<div class="case-app text-center app-cursor">
+				<div class="case-app text-center app-cursor" onclick="window.location='#{{ app.slug }}';">
 					<div class="app-icon" style="background-color: {{ app.color }};">
 						<span class="{{ app.icon }}"></span>
 					</div>
@@ -26,4 +27,27 @@
 			{% endfor %}
 		</div>
 	</div>
+	{% compress js %}
+		<script type="text/javascript">
+			var Router = Backbone.Router.extend({
+				routes: {
+					":action": "desk"
+				}
+			});
+			var app_router = new Router;
+
+			app_router.on('route:desk', function(action) {
+				$('#loading').css('visibility', 'visible');
+				$('#loading').fadeIn();
+    			Backbone.ajax({
+					url: '/admin',
+					success: function (val) {
+						$('#loading').fadeOut();
+						$('#loading').css('visibility', 'hidden');
+					}
+				});
+			});
+			Backbone.history.start();
+		</script>
+	{% endcompress %}
 {% endblock %}
