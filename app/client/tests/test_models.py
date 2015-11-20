@@ -4,7 +4,7 @@ from django.test import TestCase
 from app.client.models import Client, Login
 
 class ClientModelTestCase(TestCase):
-	fixtures = ['initial_application.json']
+	fixtures = ['application.json']
 	def setUp(self):
 		client = Client()
 		client.name = 'BigBoss'
