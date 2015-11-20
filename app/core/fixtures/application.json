@@ -60,13 +60,27 @@
         "status": 1,
         "update_date": "2015-11-17T19:52:28.888Z",
         "create_date": "2015-11-16T09:00:37Z",
-        "name": "Configura\u00e7\u00f5es",
-        "color": "#666F44",
+        "name": "E-mail",
+        "color": "rgb(203, 139, 29)",
         "slug": "gear",
         "order": 5,
-        "icon": "octicon octicon-gear"
+        "icon": "octicon octicon-mail"
     },
     "model": "core.application",
     "pk": 5
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-11-17T19:52:28.888Z",
+        "create_date": "2015-11-16T09:00:37Z",
+        "name": "Configura\u00e7\u00f5es",
+        "color": "#666F44",
+        "slug": "gear",
+        "order": 6,
+        "icon": "octicon octicon-gear"
+    },
+    "model": "core.application",
+    "pk": 6
 }
 ]
