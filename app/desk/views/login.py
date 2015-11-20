@@ -8,6 +8,10 @@ from app.account.forms import AccountForm
 
 def login(request):
 	form = AccountForm()
+	if request.method == 'POST':
+		form = AccountForm(request.POST)
+		if form.is_valid():
+			pass
 	context = {
 		"form": form
 	}
