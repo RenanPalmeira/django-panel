@@ -58,6 +58,14 @@ header {
 	background-color: #d4ec9f;
 	color: #000;
 }
+.login{
+	margin: 0 auto;
+	max-width: 430px;
+	border-radius: 8px;
+	background-color: #FFF;
+	border: 1px solid transparent;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+}
 #loading{
 	visibility: hidden;
 	position: fixed;

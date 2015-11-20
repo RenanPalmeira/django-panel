@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /logout/
+Disallow: /static/
+Disallow: /app/
+Disallow: /mydjadmin/

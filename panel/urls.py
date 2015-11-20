@@ -19,6 +19,7 @@ from django.contrib import admin
 from app.desk import views as desk
 
 urlpatterns = [
+    url(r'^login$', desk.login),
     url(r'^desk$', desk.home),
     url(r'^admin/', include(admin.site.urls)),
 ]

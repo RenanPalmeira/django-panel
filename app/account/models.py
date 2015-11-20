@@ -1,13 +1,17 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from django.contrib.auth.hashers import make_password
+from django.contrib.auth.models import AbstractBaseUser
+from django.utils.translation import ugettext_lazy as _
 
-class Account(models.Model):
+class Account(AbstractBaseUser):
 	id_account = models.AutoField(primary_key=True)
 	username = models.CharField(max_length=255, unique = True)
-	password = models.CharField(max_length=255)
+	email = models.EmailField(max_length=255)
 	
+	first_name = models.CharField(max_length=255, null = True)
+	last_name = models.CharField(max_length=255, null = True)
+
 	update_date = models.DateTimeField(auto_now=True)
 	create_date = models.DateTimeField(auto_now_add=True)
 	status = models.SmallIntegerField(default=1)
@@ -15,11 +19,8 @@ class Account(models.Model):
 	USERNAME_FIELD = ('username')
 	REQUIRED_FIELDS = []
 
-	def set_password(self, password):
-		self.password = make_password(password)
-
 	def __unicode__(self):
 		return self.username
 
 	class Meta:
-		db_table = "application"
+		db_table = "account"

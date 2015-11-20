@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'compressor',
     'widget_tweaks',
+    'app.account',
     'app.core',
     'app.desk',
     'app.client',
@@ -56,6 +57,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
+
+AUTHENTICATION_BACKENDS = ('app.account.backends.AccountBackend',)
+
+AUTH_USER_MODEL = 'account.Account'
 
 ROOT_URLCONF = 'panel.urls'
 
@@ -106,6 +111,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Session
+# https://docs.djangoproject.com/en/1.8/topics/http/sessions/
+
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_COOKIE_AGE = 8 * 60 * 60
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
