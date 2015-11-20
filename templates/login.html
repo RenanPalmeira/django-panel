@@ -4,8 +4,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="login">
-				{% if form %}	
-					<form autocomplete="off">
+				{% if form %}
+					<form action="{{ request.get_full_path }}" method="post" autocomplete="off">
+					 	{% csrf_token %}
 						<div class="form-group text-center">
 							<span class="mega-octicon octicon-repo"></span>
 							<h3>Entrar em sua conta</h3>

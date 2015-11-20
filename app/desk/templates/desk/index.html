@@ -11,7 +11,33 @@
 					{% else %}
 						<a href="/" class="navbar-brand">Django-Panel</a>
 					{% endif %}
-				</div> 
+				</div>
+				<div class="navbar-text navbar-right">
+					<i class="fa fa-cog fa-1-4x" title="Conta"></i>
+					<ul class="gear dropdown-menu">
+						<li>
+							<a href="#">
+								<i class="fa fa-github-alt fa-fw"></i>&nbsp; Action
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fa fa-github-alt fa-fw"></i>&nbsp; Another action
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fa fa-hdd-o fa-fw"></i>&nbsp; Something else here
+							</a>
+						</li>
+						<li role="separator" class="divider"></li>
+						<li>
+							<a href="/logout/">
+								<i class="fa fa-power-off fa-fw"></i>&nbsp; Sair
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div> 
 		</div>
 	</header>
@@ -29,25 +55,40 @@
 	</div>
 	{% compress js %}
 		<script type="text/javascript">
-			var Router = Backbone.Router.extend({
-				routes: {
-					":action": "desk"
-				}
-			});
-			var app_router = new Router;
-
-			app_router.on('route:desk', function(action) {
-				$('#loading').css('visibility', 'visible');
-				$('#loading').fadeIn();
-    			Backbone.ajax({
-					url: '/admin',
-					success: function (val) {
-						$('#loading').fadeOut();
-						$('#loading').css('visibility', 'hidden');
+			$(function() {
+				var Router = Backbone.Router.extend({
+					routes: {
+						':action': 'desk'
 					}
 				});
+				var app_router = new Router;
+
+				app_router.on('route:desk', function(action) {
+					$('#loading').css('visibility', 'visible');
+					$('#loading').fadeIn();
+	    			Backbone.ajax({
+						url: '/admin',
+						success: function (val) {
+							$('#loading').fadeOut();
+							$('#loading').css('visibility', 'hidden');
+						}
+					});
+				});
+				Backbone.history.start();
+
+				$('.navbar-text .fa-cog').click(function(){
+					var gear = $('.navbar-text .gear');
+					if(gear.css('display')=='none')
+						gear.css('display', 'block');
+					else
+						gear.css('display', 'none');
+				});
+
+				$(window).keydown(function(e) {
+					if (e.which == 27) 
+						$('.navbar-text .gear').css('display', 'none');	
+				});
 			});
-			Backbone.history.start();
 		</script>
 	{% endcompress %}
 {% endblock %}

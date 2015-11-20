@@ -84,6 +84,19 @@ header {
 	border-bottom: 2px solid rgba(0,0,0, 0.2);
 	width: 100%;
 }
+.navbar-text {
+	margin-top: 12px;
+	margin-bottom: 0px;
+}
+.fa {
+	cursor: pointer;
+}
+.fa-1-4x{
+	font-size: 1.4em;
+}
+.dropdown-menu{
+	right: 15%!important;
+}
 #loading{
 	visibility: hidden;
 	position: fixed;
