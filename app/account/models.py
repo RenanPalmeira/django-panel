@@ -23,4 +23,5 @@ class Account(AbstractBaseUser):
 		return self.username
 
 	class Meta:
+		app_label = "account"
 		db_table = "account"
