@@ -13,3 +13,5 @@ Using Foreman (https://github.com/ddollar/foreman) or Honcho (https://github.com
   python manage.py migrate
 
   python manage.py loaddata application.json
+
+  python manage.py compilemessages
