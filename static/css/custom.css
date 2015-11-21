@@ -16,7 +16,8 @@ header {
 }
 .mega-octicon{
 	font-size: 45px;
-	min-width: 45px;	
+	min-width: 45px;
+	line-height: 1.3;	
 }
 .navbar {
     min-height: 40px;
@@ -66,7 +67,7 @@ header {
 	margin: 0 auto;
 	margin-top: 10%;
 	padding: 20px;
-	max-width: 400px;
+	max-width: 350px;
 	border-radius: 8px;
 	background-color: #FFF;
 	border: 1px solid transparent;
