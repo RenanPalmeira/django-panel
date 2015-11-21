@@ -88,6 +88,9 @@ header {
 	margin-top: 12px;
 	margin-bottom: 0px;
 }
+.alert-right {
+	float: right;
+}
 .fa {
 	cursor: pointer;
 }

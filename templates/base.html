@@ -52,6 +52,10 @@
             <script src="{% static "js/jquery.min.js" %}" type="text/javascript"></script>
             <script src="{% static "js/backbone.min.js" %}" type="text/javascript"></script>
         {% endcompress %}
+
+        {% if recaptcha %}
+            <script src='https://www.google.com/recaptcha/api.js'></script>
+        {% endif %}
         
     </head>
     <body>
