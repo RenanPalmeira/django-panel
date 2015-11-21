@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-21 01:36-0200\n"
+"POT-Creation-Date: 2015-11-21 18:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: app/account/forms.py:12
-msgid "Senha"
-msgstr "Senha"
+#: app/account/management/commands/account.py:8
+msgid "Name of project:"
+msgstr "Nome do projeto"
 
 #: app/desk/views/login.py:34
 msgid "incorrect fields"
@@ -45,3 +45,6 @@ msgstr "Entrar em sua conta"
 #: templates/login.html:45
 msgid "Log in"
 msgstr "Entrar"
+
+#~ msgid "Senha"
+#~ msgstr "Senha"

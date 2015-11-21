@@ -82,5 +82,33 @@
     },
     "model": "core.application",
     "pk": 6
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-11-17T19:52:28.888Z",
+        "create_date": "2015-11-16T09:00:37Z",
+        "name": "Category",
+        "color": "#00bfff",
+        "slug": "tag",
+        "order": 7,
+        "icon": "octicon octicon-tag"
+    },
+    "model": "core.application",
+    "pk": 7
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-11-17T19:52:28.888Z",
+        "create_date": "2015-11-16T09:00:37Z",
+        "name": "Help",
+        "color": "#00bfff",
+        "slug": "help",
+        "order": 8,
+        "icon": "octicon octicon-question"
+    },
+    "model": "core.application",
+    "pk": 8
 }
 ]
