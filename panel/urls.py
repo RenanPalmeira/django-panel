@@ -14,13 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
-from django.contrib import admin
+from django.conf.urls.i18n import i18n_patterns
 
+from axes.decorators import watch_login
 from app.desk import views as desk
 
 urlpatterns = [
-    url(r'^login/$', desk.login),
     url(r'^logout/$', desk.logout),
     url(r'^desk$', desk.home),
-    url(r'^admin/', include(admin.site.urls)),
 ]
+
+urlpatterns += i18n_patterns(
+    url(r'^login/$', watch_login(desk.login)),
+    url(r'^locked/$', desk.login, name='recaptcha'),
+)
