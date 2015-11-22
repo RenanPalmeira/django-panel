@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-{% load compress %}
+{% load compress i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 {% block content %}
 	<div id="loading"></div>
 	<header>
@@ -7,9 +8,9 @@
 			<div class="container"> 
 				<div class="navbar-header">
 					{% if client.name %}
-						<a href="/" class="navbar-brand">{{ client.name }}</a>
+						<a href="#" class="navbar-brand">{{ client.name }}</a>
 					{% else %}
-						<a href="/" class="navbar-brand">Django-Panel</a>
+						<a href="#" class="navbar-brand">Django-Panel</a>
 					{% endif %}
 				</div>
 				<div class="navbar-text navbar-right">
@@ -41,6 +42,7 @@
 			</div> 
 		</div>
 	</header>
+	<div class="board"></div>
 	<div class="container">
 		<div class="row">
 			{% for app in apps %}
@@ -56,23 +58,38 @@
 	{% compress js %}
 		<script type="text/javascript">
 			$(function() {
+				var fadeOut = function() {
+					$('#loading').fadeOut();
+					$('#loading').css('visibility', 'hidden');		
+				};
+
 				var Router = Backbone.Router.extend({
 					routes: {
-						':action': 'desk'
+						':action': 'desk',
+						'*default': 'defaultRoute'
+					}, 
+					defaultRoute: function(){
+						fadeOut();
+						$('.board').css('visibility', 'hidden');
 					}
 				});
 				var app_router = new Router;
 
 				app_router.on('route:desk', function(action) {
+					
 					$('#loading').css('visibility', 'visible');
 					$('#loading').fadeIn();
+	    			
 	    			Backbone.ajax({
-						url: '/admin',
-						success: function (val) {
-							$('#loading').fadeOut();
-							$('#loading').css('visibility', 'hidden');
-						}
+						url: '/{{ LANGUAGE_CODE }}/app/configuration/',
+						success: function(content) {
+							fadeOut();
+							$('.board').css('visibility', 'visible');
+							$('.board').html(content);
+						},
+						error: fadeOut
 					});
+
 				});
 				Backbone.history.start();
 

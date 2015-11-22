@@ -18,6 +18,7 @@ from django.conf.urls.i18n import i18n_patterns
 
 from axes.decorators import watch_login
 from app.desk import views as desk
+from app.configuration import views as configuration
 
 urlpatterns = [
     url(r'^logout/$', desk.logout),
@@ -27,4 +28,5 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     url(r'^login/$', watch_login(desk.login)),
     url(r'^locked/$', desk.login, name='recaptcha'),
+    url(r'^app/configuration/', configuration.home)
 )
