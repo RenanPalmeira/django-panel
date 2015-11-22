@@ -10,8 +10,4 @@ Using Foreman (https://github.com/ddollar/foreman) or Honcho (https://github.com
 
   pip install -r requirements.txt
 
-  python manage.py migrate
-
-  python manage.py loaddata application.json
-
-  python manage.py compilemessages
+  python manage.py account
