@@ -21,7 +21,11 @@ class Account(AbstractBaseUser):
 
 	def __unicode__(self):
 		return self.username
-
+	
+	@property
+	def is_staff(self):
+		return bool(self.status)
+		
 	class Meta:
 		app_label = "account"
 		db_table = "account"

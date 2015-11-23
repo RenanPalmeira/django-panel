@@ -16,6 +16,7 @@ class Project(models.Model):
 	status = models.SmallIntegerField(default=1)
 
 	class Meta:
+		app_label = "project"
 		db_table = "project"
 
 class ProjectAccount(models.Model):
@@ -31,6 +32,7 @@ class ProjectAccount(models.Model):
 	status = models.SmallIntegerField(default=1)
 
 	class Meta:
+		app_label = "project"
 		db_table = "project_account_set"
 
 class ProjectApplication(models.Model):
@@ -44,4 +46,5 @@ class ProjectApplication(models.Model):
 	status = models.SmallIntegerField(default=1)
 
 	class Meta:
+		app_label = "project"
 		db_table = "project_application_set"
