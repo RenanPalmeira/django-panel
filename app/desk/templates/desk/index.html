@@ -58,6 +58,16 @@
 	{% compress js %}
 		<script type="text/javascript">
 			$(function() {
+				var ApplicationBoardModel = Backbone.Model.extend({
+					urlRoot: '/{{ LANGUAGE_CODE }}/api/apps/?loadtype=results'
+				});
+				
+				var ApplicationBoardCollection = Backbone.Collection.extend({
+					model: ApplicationBoardModel,
+					url:  '/{{ LANGUAGE_CODE }}/api/apps/?loadtype=results'
+					
+				});
+				
 				var fadeOut = function() {
 					$('#loading').fadeOut();
 					$('#loading').css('visibility', 'hidden');		
