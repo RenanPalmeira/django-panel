@@ -39,10 +39,14 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'axes',
     'compressor',
     'widget_tweaks',
+    'app.api',
     'app.account',
+    'app.project',
+    'app.configuration',
     'app.core',
     'app.desk',
     'app.client',
@@ -57,10 +61,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'axes.middleware.FailedLoginMiddleware',
 )
 
-AUTHENTICATION_BACKENDS = ('app.account.backends.AccountBackend',)
+AUTHENTICATION_BACKENDS = (
+    'app.account.backends.AccountBackend',
+)
 
 AUTH_USER_MODEL = 'account.Account'
 
@@ -81,6 +88,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.i18n',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -90,6 +98,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'panel.wsgi.application'
 
+# http://www.django-rest-framework.org/api-guide/authentication/
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.JSONParser',
+    ),     
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': ( 
+        'rest_framework.permissions.IsAdminUser',
+    ),
+    'PAGE_SIZE': 10
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
@@ -101,13 +126,13 @@ DATABASES = {
     }
 }
 
-AXES_LOCKOUT_URL = '/locked/'
 
+AXES_LOCKOUT_URL = '/locked/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
