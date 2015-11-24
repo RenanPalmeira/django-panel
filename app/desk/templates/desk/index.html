@@ -44,6 +44,7 @@
 	</header>
 	<div class="board"></div>
 	<div class="container">
+	<a href="#"><%= title %></a>
 		<div class="row">
 			{% for app in apps %}
 				<div class="case-app text-center app-cursor" onclick="window.location='#{{ app.slug }}';">
@@ -64,8 +65,19 @@
 				
 				var ApplicationBoardCollection = Backbone.Collection.extend({
 					model: ApplicationBoardModel,
-					url:  '/{{ LANGUAGE_CODE }}/api/apps/?loadtype=results'
-					
+					url:  '/{{ LANGUAGE_CODE }}/api/apps/?loadtype=results'					
+				});
+
+				var BoardView = Backbone.View.extend({
+					el: $('.board'),
+					initialize: function() {
+						this.model = new ApplicationBoardModel();
+						this.model.fetch();
+						this.listenTo(this.model, "change", this.render);
+					},
+					render: function(){
+						console.log(this.model.toJSON());
+					}
 				});
 				
 				var fadeOut = function() {
@@ -90,16 +102,7 @@
 					$('#loading').css('visibility', 'visible');
 					$('#loading').fadeIn();
 	    			
-	    			Backbone.ajax({
-						url: '/{{ LANGUAGE_CODE }}/app/configuration/',
-						success: function(content) {
-							fadeOut();
-							$('.board').css('visibility', 'visible');
-							$('.board').html(content);
-						},
-						error: fadeOut
-					});
-
+	    			var board = new BoardView();
 				});
 				Backbone.history.start();
 
