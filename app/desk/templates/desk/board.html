@@ -1,19 +1,15 @@
-{% load compress %}
-	<div class="container">
-		<div class="col-md-12">
-			<h2>{{ name }}</h2>
+<div class="container">
+	<div class="col-md-12">
+		<h2><%= name %></h2>
+	</div>
+</div>
+<hr/>
+<div class="container">
+	<div class="col-md-12">
+		<div class="col-md-5">
+			<ul class="menu">
+				<li><i class="fa fa-angle-right"></i><span><%= name %></span></li>
+			</ul>
 		</div>
 	</div>
-	<hr/>
-	<div class="container">
-		<div class="col-md-12">
-			{% block app %}{% endblock %}	
-		</div>
-	</div>
-{% compress js %}
-	<script type="text/javascript">
-		$(function() {
-		
-		});
-	</script>
-{% endcompress %}
+</div>

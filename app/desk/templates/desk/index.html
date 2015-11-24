@@ -42,9 +42,12 @@
 			</div> 
 		</div>
 	</header>
-	<div class="board"></div>
+	<div class="board">
+		<script type="text/template" id="board_template">
+			{% include "desk/board.html" %}
+		</script>
+	</div>
 	<div class="container">
-	<a href="#"><%= title %></a>
 		<div class="row">
 			{% for app in apps %}
 				<div class="case-app text-center app-cursor" onclick="window.location='#{{ app.slug }}';">
@@ -60,23 +63,31 @@
 		<script type="text/javascript">
 			$(function() {
 				var ApplicationBoardModel = Backbone.Model.extend({
-					urlRoot: '/{{ LANGUAGE_CODE }}/api/apps/?loadtype=results'
+					urlRoot: '/{{ LANGUAGE_CODE }}/api/apps/',
+					initialize : function() {
+						this.url = this.url()+"?loadtype=results";
+					}
 				});
 				
 				var ApplicationBoardCollection = Backbone.Collection.extend({
 					model: ApplicationBoardModel,
-					url:  '/{{ LANGUAGE_CODE }}/api/apps/?loadtype=results'					
+					url:  '/{{ LANGUAGE_CODE }}/api/apps/',
+					initialize : function() {
+						this.url = this.url()+"?loadtype=results";
+					}
 				});
 
 				var BoardView = Backbone.View.extend({
 					el: $('.board'),
-					initialize: function() {
+					template: _.template($('#board_template').html()),
+					initialize: function(options) {
 						this.model = new ApplicationBoardModel();
-						this.model.fetch();
+						this.model.fetch(options);
 						this.listenTo(this.model, "change", this.render);
 					},
 					render: function(){
-						console.log(this.model.toJSON());
+						this.$el.html(this.template(this.model.get(0)));
+						return this;
 					}
 				});
 				
@@ -101,8 +112,16 @@
 					
 					$('#loading').css('visibility', 'visible');
 					$('#loading').fadeIn();
-	    			
-	    			var board = new BoardView();
+
+	    			var board = new BoardView({
+	    				traditional: true,
+						data:{
+							"q":action
+						}
+	    			});
+
+	    			$('.board').css('visibility', 'visible');
+	    			$('#loading').css('visibility', 'hidden');
 				});
 				Backbone.history.start();
 
