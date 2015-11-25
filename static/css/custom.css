@@ -6,6 +6,10 @@ body {
 header {
 	min-height: 100px;
 }
+.btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn:active.focus,.btn.active.focus {
+    outline: none;
+}
 .octicon {
 	font: normal normal normal 16px/1 octicons;
 	display: inline-block;

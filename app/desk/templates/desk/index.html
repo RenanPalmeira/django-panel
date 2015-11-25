@@ -1,6 +1,5 @@
 {% extends "base.html" %}
-{% load compress i18n %}
-{% get_current_language as LANGUAGE_CODE %}
+{% load staticfiles compress i18n %}
 {% block content %}
 	<div id="loading"></div>
 	<header>
@@ -43,10 +42,10 @@
 		</div>
 	</header>
 	<div class="board">
-		<script type="text/template" id="board_template">
-			{% include "desk/board.html" %}
-		</script>
 	</div>
+	<script type="text/template" id="board_template">
+		{% include "desk/board.html" %}
+	</script>
 	<div class="container">
 		<div class="row">
 			{% for app in apps %}
@@ -60,84 +59,10 @@
 		</div>
 	</div>
 	{% compress js %}
-		<script type="text/javascript">
-			$(function() {
-				var ApplicationBoardModel = Backbone.Model.extend({
-					urlRoot: '/{{ LANGUAGE_CODE }}/api/apps/',
-					initialize : function() {
-						this.url = this.url()+"?loadtype=results";
-					}
-				});
-				
-				var ApplicationBoardCollection = Backbone.Collection.extend({
-					model: ApplicationBoardModel,
-					url:  '/{{ LANGUAGE_CODE }}/api/apps/',
-					initialize : function() {
-						this.url = this.url()+"?loadtype=results";
-					}
-				});
-
-				var BoardView = Backbone.View.extend({
-					el: $('.board'),
-					template: _.template($('#board_template').html()),
-					initialize: function(options) {
-						this.model = new ApplicationBoardModel();
-						this.model.fetch(options);
-						this.listenTo(this.model, "change", this.render);
-					},
-					render: function(){
-						this.$el.html(this.template(this.model.get(0)));
-						return this;
-					}
-				});
-				
-				var fadeOut = function() {
-					$('#loading').fadeOut();
-					$('#loading').css('visibility', 'hidden');		
-				};
-
-				var Router = Backbone.Router.extend({
-					routes: {
-						':action': 'desk',
-						'*default': 'defaultRoute'
-					}, 
-					defaultRoute: function(){
-						fadeOut();
-						$('.board').css('visibility', 'hidden');
-					}
-				});
-				var app_router = new Router;
-
-				app_router.on('route:desk', function(action) {
-					
-					$('#loading').css('visibility', 'visible');
-					$('#loading').fadeIn();
-
-	    			var board = new BoardView({
-	    				traditional: true,
-						data:{
-							"q":action
-						}
-	    			});
-
-	    			$('.board').css('visibility', 'visible');
-	    			$('#loading').css('visibility', 'hidden');
-				});
-				Backbone.history.start();
-
-				$('.navbar-text .fa-cog').click(function(){
-					var gear = $('.navbar-text .gear');
-					if(gear.css('display')=='none')
-						gear.css('display', 'block');
-					else
-						gear.css('display', 'none');
-				});
-
-				$(window).keydown(function(e) {
-					if (e.which == 27) 
-						$('.navbar-text .gear').css('display', 'none');	
-				});
-			});
-		</script>
-	{% endcompress %}
+        <script src="{% static "js/models.js" %}" type="text/javascript"></script>
+        <script src="{% static "js/collections.js" %}" type="text/javascript"></script>
+        <script src="{% static "js/views.js" %}" type="text/javascript"></script>
+        <script src="{% static "js/router.js" %}" type="text/javascript"></script>
+        <script src="{% static "js/app.js" %}" type="text/javascript"></script>
+    {% endcompress %}
 {% endblock %}
