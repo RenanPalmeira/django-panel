@@ -14,6 +14,7 @@ class Command(base.BaseCommand):
 
 		call_command('migrate', verbosity=0, interactive=False)
 		call_command('loaddata', 'application', verbosity=0, interactive=False)
+		call_command('compilemessages', verbosity=0, interactive=False)
 
 		name = str(raw_input(_('Name of project: ')))
 		site = str(raw_input(_('Site of project: ')))
