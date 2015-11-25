@@ -1,2 +1,3 @@
-*.py filter=spabs
-*.html filter=spabs
+* text = auto
+*.py text
+*.html text
