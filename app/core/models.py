@@ -16,5 +16,9 @@ class Application(models.Model):
 	def __unicode__(self):
 		return self.name
 
+	@models.permalink
+	def get_absolute_url(self):
+		return ('app', None, {"slug":self.slug})
+
 	class Meta:
 		db_table = "application"

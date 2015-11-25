@@ -6,10 +6,17 @@
 <hr/>
 <div class="container">
 	<div class="col-md-12">
-		<div class="col-md-5">
+		<div class="col-md-3">
 			<ul class="menu">
-				<li><i class="fa fa-angle-right"></i><span><%= name %></span></li>
+				<li>	
+					<a href="<%= get_absolute_url %>">
+						<i class="fa fa-angle-right"></i><span><%= name %></span>
+					</a>
+				</li>
 			</ul>
+		</div>
+		<div class="col-md-9 box">
+			<%= name %>
 		</div>
 	</div>
 </div>
