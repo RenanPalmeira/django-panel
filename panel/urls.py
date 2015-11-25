@@ -18,6 +18,7 @@ from django.conf.urls.i18n import i18n_patterns
 
 from axes.decorators import watch_login
 from app.desk import views as desk
+from app.configuration import views as configuration
 
 from app.api.urls import router as api
 
@@ -27,7 +28,7 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    url(r'^app/(?P<slug>[-\w\d]+)', desk.home, name='app'),
+    url(r'^app/gear', configuration.form, name='app'),
     url(r'^api/', include(api.urls)),
     url(r'^login/$', watch_login(desk.login)),
     url(r'^locked/$', desk.login, name='recaptcha'),

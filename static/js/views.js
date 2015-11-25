@@ -7,7 +7,10 @@ var BoardView = Backbone.View.extend({
 		this.listenTo(this.model, "change", this.render);
 	},
 	render: function(){
-		this.$el.html(this.template(this.model.get(0)));
+		var data = this.model.get(0);
+		if(data.get_absolute_url)
+			data.get_absolute_url = "/"+language+"/"+data.get_absolute_url;
+		this.$el.html(this.template(data));
 		$('.board').css('visibility', 'visible');
 		$('#loading').css('visibility', 'hidden');
 		return this;
