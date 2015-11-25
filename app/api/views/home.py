@@ -16,7 +16,7 @@ class ApplicationViewSet(viewsets.ModelViewSet):
 
 		query = self.request.query_params.get('q', None)
 
-		if(query):
+		if query:
 			try:
 				queryset = [Application.objects.get(slug=query)]
 			except Exception, e:

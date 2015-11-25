@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-21 18:29+0000\n"
+"POT-Creation-Date: 2015-11-25 00:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: app/account/management/commands/account.py:8
-msgid "Name of project:"
+#: app/account/forms.py:12
+msgid "Password"
+msgstr ""
+
+#: app/account/management/commands/account.py:19
+msgid "Name of project: "
+msgstr ""
+
+#: app/account/management/commands/account.py:20
+msgid "Site of project: "
+msgstr ""
+
+#: app/account/management/commands/account.py:22
+msgid "E-Mail: "
+msgstr ""
+
+#: app/account/management/commands/account.py:23
+msgid "Username: "
 msgstr ""
 
 #: app/desk/views/login.py:34
@@ -29,21 +45,18 @@ msgstr ""
 msgid "empty fields"
 msgstr ""
 
-#: panel/settings.py:125
+#: panel/settings.py:146
 msgid "Portuguese"
 msgstr ""
 
-#: panel/settings.py:126
+#: panel/settings.py:147
 msgid "English"
 msgstr ""
 
-#: templates/login.html:12
+#: templates/login.html:11
 msgid "Log in to your account"
 msgstr ""
 
-#: templates/login.html:45
+#: templates/login.html:44
 msgid "Log in"
 msgstr ""
-
-#~ msgid "Senha"
-#~ msgstr "Password"
