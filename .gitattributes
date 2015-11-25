@@ -1,3 +1,2 @@
-* text=auto
-*.py filter=2
-*.html filter=2
+*.py filter=spabs
+*.html filter=spabs
