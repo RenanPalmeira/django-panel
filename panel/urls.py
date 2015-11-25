@@ -27,6 +27,7 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
+    url(r'^app/(?P<slug>[-\w\d]+)', desk.home, name='app'),
     url(r'^api/', include(api.urls)),
     url(r'^login/$', watch_login(desk.login)),
     url(r'^locked/$', desk.login, name='recaptcha'),

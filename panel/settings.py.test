@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'app.api',
     'app.account',
     'app.project',
+    'app.configuration',
     'app.core',
     'app.desk',
     'app.client',

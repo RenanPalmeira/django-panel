@@ -5,7 +5,11 @@
 		<div class="row">
 			<div class="login">
 				{% if form %}
-					<form action="{{ request.get_full_path }}" method="post" autocomplete="off">
+					{% if next %}
+						<form action="{{ request.get_full_path }}?next={{next}}" method="post" autocomplete="off">
+					{%else%}
+						<form action="{{ request.get_full_path }}" method="post" autocomplete="off">
+					{% endif %}
 					 	{% csrf_token %}
 						<div class="form-group text-center">
 							<h3>{% trans "Log in to your account" %}</h3>

@@ -6,6 +6,12 @@ body {
 header {
 	min-height: 100px;
 }
+a:hover {
+	text-decoration: none;
+}
+hr {
+	margin-bottom: 0;
+}
 .btn:focus,.btn:active:focus,.btn.active:focus,
 .btn.focus,.btn:active.focus,.btn.active.focus {
     outline: none;
@@ -76,6 +82,7 @@ header {
 	background-color: #FFF;
 	border: 1px solid transparent;
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 }
 .login .form-control {
 	height: 45px;
@@ -120,11 +127,19 @@ header {
     margin-top: 20px;
     margin-bottom: 0;
 }
+.board .box{
+	border: 1px solid #eee;
+	border-top: 0;
+	min-height: 80px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
 .board .menu {
+	margin-top: 20px;
 	padding-left: 0px;
 	margin-bottom: 0px;
 	list-style: outside none none;
-	width: 180px;
+	width: 100%;
 	
 }
 .board .menu li {
