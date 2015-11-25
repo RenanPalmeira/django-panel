@@ -62,7 +62,7 @@
         "create_date": "2015-11-16T09:00:37Z",
         "name": "E-mail",
         "color": "rgb(203, 139, 29)",
-        "slug": "gear",
+        "slug": "email",
         "order": 5,
         "icon": "octicon octicon-mail"
     },
