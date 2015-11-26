@@ -1,8 +1,8 @@
 from __future__ import unicode_literals
 
 from django.conf.urls import url, include
-from .views import ApplicationViewSet
+from app.core.views import AppViewSet
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register(r'apps', ApplicationViewSet, 'Application')
+router.register(r'app', AppViewSet, 'App')

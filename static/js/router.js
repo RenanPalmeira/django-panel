@@ -7,6 +7,7 @@ var fadeOut = function() {
 var Router = Backbone.Router.extend({
 	routes: {
 		':action': 'desk',
+		':action/:method': 'desk',
 		'*default': 'defaultRoute'
 	}, 
 	defaultRoute: function(){
@@ -17,18 +18,20 @@ var Router = Backbone.Router.extend({
 });
 var app_router = new Router;
 
-app_router.on('route:desk', function(action) {
-	
+app_router.on('route:desk', function(action, method) {
 	$('#loading').css('visibility', 'visible');
 	$('#loading').fadeIn();
-
-	var board = new BoardView({
-		traditional: true,
-		data:{
-			"q":action
-		}
-	});
-
 	
+	if(method=='create') {
+		var board = new BoardFormView();
+	}
+	else {
+		var board = new BoardView({
+			traditional: true,
+			data:{
+				"q":action
+			}
+		});
+	}
 });
 Backbone.history.start();

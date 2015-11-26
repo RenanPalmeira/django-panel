@@ -1,5 +1,7 @@
-*.pyc
+media/*
+production_website/
 settings.py
+*.pyc
 *.sqlite3
 *.sqlite
 *.sql

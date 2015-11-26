@@ -1,25 +1,41 @@
+{% load i18n %}
 <div class="container">
 	<div class="col-md-12">
 		<h2><%= name %></h2>
 	</div>
 </div>
 <hr/>
-<div class="container">
+<div id="board-container" class="container">
 	<div class="col-md-12">
 		<div class="col-md-3">
 			<ul class="menu">
 				<li>	
-					<a href="<%= get_absolute_url %>">
-						<i class="fa fa-angle-right"></i><span><%= name %></span>
+					<a href="#">
+						<i class="fa fa-angle-right"></i><span>Home</span>
 					</a>
 				</li>
 			</ul>
 		</div>
 		<div class="col-md-9 box">
-			<%= name %>
+			<div class="app" onclick="window.location='';">
+				<h1>{% trans "Create" %} <%= name %></h1>
+				<p>...</p>
+			</div>
+			<div class="app">
+				<h1>{% trans "List" %} <%= name %></h1>
+				<p>...</p>
+			</div>
+			<div class="app">
+				<h1>{% trans "Delete" %} <%= name %></h1>
+				<p>...</p>
+			</div>
 		</div>
 	</div>
 </div>
 <script type="text/javascript">
-	void(0);
+	$(function() {
+		$('.box .app').click(function(){
+			alert();
+		});
+	});
 </script>

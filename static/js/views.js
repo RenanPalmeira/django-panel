@@ -8,8 +8,6 @@ var BoardView = Backbone.View.extend({
 	},
 	render: function(){
 		var data = this.model.get(0);
-		if(data.get_absolute_url)
-			data.get_absolute_url = "/"+language+"/"+data.get_absolute_url;
 		this.$el.html(this.template(data));
 		$('.board').css('visibility', 'visible');
 		$('#loading').css('visibility', 'hidden');

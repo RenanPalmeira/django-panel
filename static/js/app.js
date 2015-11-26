@@ -1,3 +1,9 @@
+function ajax(url, callback) {
+	alert(url);
+	var data = { url: url, success: callback};
+	Backbone.ajax(data);
+}
+
 $('.navbar-text .fa-cog').click(function(){
 	var gear = $('.navbar-text .gear');
 	if(gear.css('display')=='none')

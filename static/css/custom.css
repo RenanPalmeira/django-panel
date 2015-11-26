@@ -44,6 +44,24 @@ hr {
     width: 138px;
     height: 140px;
 }
+.app{
+	cursor: pointer;
+	width: 100%;
+	height: auto;
+	padding: 10px;
+	padding-left: 15px;
+	border-bottom: 2px solid #eee;
+}
+.app h1 {
+	font-size: 16px;
+	font-weight: bold;
+}
+.app p{
+	color: #969696;
+}
+.app:hover{
+	background-color: #F8F8F8;
+}
 .app-cursor {
 	cursor: pointer;
 }
@@ -123,6 +141,9 @@ hr {
 	color: #36414C;
 	background-color: #ffffff;
 }
+.board .col-md-9 {
+	padding: 0px;
+}
 .board h2 {
     margin-top: 20px;
     margin-bottom: 0;
@@ -130,9 +151,6 @@ hr {
 .board .box{
 	border: 1px solid #eee;
 	border-top: 0;
-	min-height: 80px;
-	padding-top: 10px;
-	padding-bottom: 10px;
 }
 .board .menu {
 	margin-top: 20px;
