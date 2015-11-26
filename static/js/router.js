@@ -11,7 +11,6 @@ var Router = Backbone.Router.extend({
 		'*default': 'defaultRoute'
 	}, 
 	defaultRoute: function(){
-		alert('1');
 		fadeOut();
 		$('.board').empty();
 		$('.board').css('visibility', 'hidden');
@@ -24,6 +23,7 @@ app_router.on('route:desk', function(action, method) {
 	$('#loading').fadeIn();
 	var board = new BoardView({
 		traditional: true,
+		step: method,
 		data:{
 			"q":action
 		}

@@ -148,9 +148,22 @@ hr {
     margin-top: 20px;
     margin-bottom: 0;
 }
-.board .box{
+.board .box {
 	border: 1px solid #eee;
 	border-top: 0;
+}
+.board .box form {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.board .box form label {
+	text-transform: capitalize;
+}
+.board .box .app-box{
+	display: none;
+}
+.board .box .app-box.active{
+	display: block;
 }
 .board .menu {
 	margin-top: 20px;

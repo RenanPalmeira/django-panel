@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'app.core',
     'app.desk',
     'app.client',
+    'website'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -164,7 +165,6 @@ SESSION_COOKIE_AGE = 8 * 60 * 60
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = 'staticfiles'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
@@ -175,3 +175,15 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
 )
+
+MEDIA_ROOT = 'mediafiles'
+
+if DEBUG:
+    INSTALLED_APPS += (
+        'debug_toolbar',
+        'debug_panel',
+    )
+
+    MIDDLEWARE_CLASSES += (
+        'debug_panel.middleware.DebugPanelMiddleware',
+    )

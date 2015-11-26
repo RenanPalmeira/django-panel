@@ -1,5 +1,14 @@
-<%
-	_.each(fields, function(i){
-		%><input type="text" class="form-control" name="<%= i %>"><%
-	});
-%>
+{% load i18n %}
+<form action="#" method="post">
+	<%
+		_.each(fields, function(i){
+			%>
+			<div class="form-group">
+				<label><%= i %></label>
+				<input type="text" class="form-control" name="<%= i %>"/>
+			</div>
+			<%
+		});
+	%>
+	<button class="btn btn-primary">{% trans "Save" %}</button>
+</form>
