@@ -34,7 +34,7 @@
         "create_date": "2015-11-16T09:00:37Z",
         "name": "Pages",
         "color": "#16a085",
-        "slug": "page",
+        "slug": "pages",
         "order": 3,
         "icon": "octicon octicon-file-text"
     },

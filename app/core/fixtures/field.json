@@ -1,0 +1,15 @@
+[
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-11-17T19:52:28.192Z",
+        "create_date": "2015-11-16T09:00:37Z",
+        "id_application":"1",
+        "field": "name",
+        "type": "char",
+        "order": 1
+    },
+    "model": "core.applicationField",
+    "pk": 1
+}
+]
