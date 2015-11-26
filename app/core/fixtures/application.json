@@ -110,5 +110,19 @@
     },
     "model": "core.application",
     "pk": 8
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-11-17T19:52:28.888Z",
+        "create_date": "2015-11-16T09:00:37Z",
+        "name": "Applications",
+        "color": "#00bfff",
+        "slug": "application",
+        "order": 9,
+        "icon": "octicon octicon-beaker"
+    },
+    "model": "core.application",
+    "pk": 9
 }
 ]

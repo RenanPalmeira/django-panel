@@ -1,5 +1,4 @@
 function ajax(url, callback) {
-	alert(url);
 	var data = { url: url, success: callback};
 	Backbone.ajax(data);
 }

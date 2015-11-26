@@ -17,25 +17,21 @@
 			</ul>
 		</div>
 		<div class="col-md-9 box">
-			<div class="app" onclick="window.location='';">
+			<div class="app" onclick="window.location='#<%= slug %>/create';">
 				<h1>{% trans "Create" %} <%= name %></h1>
 				<p>...</p>
 			</div>
-			<div class="app">
+			<div class="app" onclick="window.location='#<%= slug %>/list';">
 				<h1>{% trans "List" %} <%= name %></h1>
 				<p>...</p>
 			</div>
-			<div class="app">
+			<div class="app" onclick="window.location='#<%= slug %>/delete';">
 				<h1>{% trans "Delete" %} <%= name %></h1>
 				<p>...</p>
 			</div>
 		</div>
 	</div>
+	<div class="col-md-12" style="display: none;">
+		{% include "desk/form.html" %}
+	</div>
 </div>
-<script type="text/javascript">
-	$(function() {
-		$('.box .app').click(function(){
-			alert();
-		});
-	});
-</script>
