@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-25 00:30+0000\n"
+"POT-Creation-Date: 2015-11-26 01:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,18 +46,34 @@ msgstr "campos inválidos"
 msgid "empty fields"
 msgstr "campos em branco"
 
-#: panel/settings.py:146
+#: app/pages/templates/pages/home.html:5
+msgid "Create Pages"
+msgstr "Criar Páginas"
+
+#: app/pages/templates/pages/home.html:6
+msgid "Create a page for see in website"
+msgstr "Criar uma página para ser vista no website"
+
+#: app/pages/templates/pages/home.html:9
+msgid "List Pages"
+msgstr "Listar Páginas"
+
+#: app/pages/templates/pages/home.html:13
+msgid "Delete Pages"
+msgstr "Deleta uma Página"
+
+#: panel/settings.py:148
 msgid "Portuguese"
 msgstr ""
 
-#: panel/settings.py:147
+#: panel/settings.py:149
 msgid "English"
 msgstr ""
 
-#: templates/login.html:11
+#: templates/login.html:15
 msgid "Log in to your account"
 msgstr "Entrar em sua conta"
 
-#: templates/login.html:44
+#: templates/login.html:48
 msgid "Log in"
 msgstr "Entrar"
