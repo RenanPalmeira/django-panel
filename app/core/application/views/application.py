@@ -2,7 +2,7 @@
 
 from rest_framework import viewsets, exceptions, response
 from app.api.pagination import CustomPagination
-from app.core.serializers import AppSerializer, Application
+from app.core.application.serializers import AppSerializer, Application
 
 class AppViewSet(viewsets.ModelViewSet):
 	model = Application

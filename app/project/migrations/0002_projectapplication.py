@@ -7,7 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0002_application_order'),
+        ('application', '0001_initial'),
         ('project', '0001_initial'),
     ]
 
@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('update_date', models.DateTimeField(auto_now=True)),
                 ('create_date', models.DateTimeField(auto_now_add=True)),
                 ('status', models.SmallIntegerField(default=1)),
-                ('application', models.ForeignKey(to='core.Application')),
+                ('application', models.ForeignKey(to='application.Application')),
                 ('project', models.ForeignKey(to='project.Project')),
             ],
             options={

@@ -18,6 +18,7 @@ class Migration(migrations.Migration):
                 ('slug', models.SlugField()),
                 ('icon', models.CharField(max_length=155)),
                 ('color', models.CharField(max_length=155)),
+                ('order', models.SmallIntegerField(null=True)),
                 ('update_date', models.DateTimeField(auto_now=True)),
                 ('create_date', models.DateTimeField(auto_now_add=True)),
                 ('status', models.SmallIntegerField(default=1)),

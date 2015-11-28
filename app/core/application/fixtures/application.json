@@ -1,0 +1,30 @@
+[
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-11-17T19:52:28.192Z",
+        "create_date": "2015-11-16T09:00:37Z",
+        "name": "Home",
+        "color": "#0275d8",
+        "slug": "home",
+        "order": 1,
+        "icon": "octicon octicon-home"
+    },
+    "model": "application.application",
+    "pk": 1
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-11-17T19:52:28.888Z",
+        "create_date": "2015-11-16T09:00:37Z",
+        "name": "Aplicativos",
+        "color": "#00bfff",
+        "slug": "application",
+        "order": 9,
+        "icon": "octicon octicon-beaker"
+    },
+    "model": "application.application",
+    "pk": 9
+}
+]

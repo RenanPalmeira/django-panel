@@ -2,7 +2,7 @@
 
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from app.core.models import Application
+from app.core.application.models import Application
 
 @login_required
 def home(request):
