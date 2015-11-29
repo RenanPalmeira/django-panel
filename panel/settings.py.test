@@ -65,8 +65,9 @@ MIDDLEWARE_CLASSES = (
 )
 
 AUTHENTICATION_BACKENDS = (
-    'app.account.backends.AccountBackend',
+    'board.core.account.backends.AccountBackend',
 )
+
 
 AUTH_USER_MODEL = 'account.Account'
 
