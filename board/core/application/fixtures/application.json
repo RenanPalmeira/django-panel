@@ -19,7 +19,7 @@
         "update_date": "2015-11-17T19:52:28.192Z",
         "create_date": "2015-11-16T09:00:37Z",
         "name": "Account",
-        "color": "#C63D4D",
+        "color": "#A92837",
         "slug": "account",
         "order": 2,
         "icon": "octicon octicon-person"
@@ -32,14 +32,28 @@
         "status": 1,
         "update_date": "2015-11-17T19:52:28.192Z",
         "create_date": "2015-11-16T09:00:37Z",
-        "name": "Configuration",
-        "color": "#0275d8",
-        "slug": "configuration",
+        "name": "Redes sociais",
+        "color": "#0AA24E",
+        "slug": "social",
         "order": 3,
-        "icon": "octicon octicon-gear"
+        "icon": "octicon octicon-mention"
     },
     "model": "application.application",
     "pk": 3
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-11-17T19:52:28.192Z",
+        "create_date": "2015-11-16T09:00:37Z",
+        "name": "Configuration",
+        "color": "#0275d8",
+        "slug": "configuration",
+        "order": 4,
+        "icon": "octicon octicon-gear"
+    },
+    "model": "application.application",
+    "pk": 4
 },
 {
     "fields": {

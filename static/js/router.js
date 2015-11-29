@@ -21,12 +21,15 @@ var app_router = new Router;
 app_router.on('route:desk', function(action, method) {
 	$('#loading').css('visibility', 'visible');
 	$('#loading').fadeIn();
-	var board = new BoardView({
-		traditional: true,
-		step: method,
-		data:{
-			"q":action
+	
+	var url = "/" + language + "/app/" + action + "/";
+	Backbone.ajax({
+		url: url,
+		success: function(context){
+			$('.board').css('visibility', 'visible');
+			$('.board').html(context);
 		}
 	});
+	fadeOut();
 });
 Backbone.history.start();
