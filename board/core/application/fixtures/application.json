@@ -1,0 +1,58 @@
+[
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-11-17T19:52:28.192Z",
+        "create_date": "2015-11-16T09:00:37Z",
+        "name": "Home",
+        "color": "#0275d8",
+        "slug": "home",
+        "order": 1,
+        "icon": "octicon octicon-home"
+    },
+    "model": "application.application",
+    "pk": 1
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-11-17T19:52:28.192Z",
+        "create_date": "2015-11-16T09:00:37Z",
+        "name": "Account",
+        "color": "#C63D4D",
+        "slug": "account",
+        "order": 2,
+        "icon": "octicon octicon-person"
+    },
+    "model": "application.application",
+    "pk": 2
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-11-17T19:52:28.192Z",
+        "create_date": "2015-11-16T09:00:37Z",
+        "name": "Configuration",
+        "color": "#0275d8",
+        "slug": "configuration",
+        "order": 3,
+        "icon": "octicon octicon-gear"
+    },
+    "model": "application.application",
+    "pk": 3
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-11-17T19:52:28.888Z",
+        "create_date": "2015-11-16T09:00:37Z",
+        "name": "Application",
+        "color": "#00bfff",
+        "slug": "application",
+        "order": 9,
+        "icon": "octicon octicon-beaker"
+    },
+    "model": "application.application",
+    "pk": 9
+}
+]

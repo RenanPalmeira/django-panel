@@ -2,11 +2,11 @@
 
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from app.core.application.models import Application
 
+from board.core.application.models import Application
 @login_required
 def home(request):
-	apps = Application.objects.filter(status=1).order_by('order')
+	apps = Application.objects.all()
 	context = {
 		"apps": apps
 	}

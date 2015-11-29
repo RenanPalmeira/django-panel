@@ -1,15 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from rest_framework import viewsets, exceptions, response
-from app.api.pagination import CustomPagination
-from app.core.configuration.serializers import ConfigurationSerializer, Configuration
+from board.api.pagination import CustomPagination
 
-class ConfigurationViewSet(viewsets.ModelViewSet):
-	model = Configuration
-	serializer_class = ConfigurationSerializer
-
+class ViewSet(viewsets.ModelViewSet):
 	def get_queryset(self):
-		queryset = Configuration.objects.all()
+		queryset = self.model.objects.all()
 		loadtype = self.request.query_params.get('loadtype', None)
 		if loadtype == 'results':
 		    self.pagination_class = CustomPagination
@@ -18,7 +14,7 @@ class ConfigurationViewSet(viewsets.ModelViewSet):
 
 		if query:
 			try:
-				queryset = [Configuration.objects.get(slug=query)]
+				queryset = [self.model.objects.get(slug=query)]
 			except Exception, e:
 				pass
 

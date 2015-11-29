@@ -7,7 +7,7 @@ from django.contrib.auth import login as login_auth
 from django.utils.translation import ugettext as _
 
 from django.core.urlresolvers import resolve
-from app.account.forms import AccountForm
+from board.core.account.forms import AccountForm
 
 def login(request):
 	context = {}

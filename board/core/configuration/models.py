@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 
-from app.account.models import Account
+from board.core.account.models import Account
 
 class Configuration(models.Model):
 	id_configuration = models.AutoField(primary_key=True)
