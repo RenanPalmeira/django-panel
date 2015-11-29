@@ -2,8 +2,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-from app.account.models import Account
-from app.core.application.models import Application
+from board.core.account.models import Account
+from board.core.application.models import Application
 
 class Project(models.Model):
 	id_project = models.AutoField(primary_key=True)

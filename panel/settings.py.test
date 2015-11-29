@@ -43,13 +43,12 @@ INSTALLED_APPS = (
     'axes',
     'compressor',
     'widget_tweaks',
-    'app.account',
-    'app.api',
-    'app.desk',
-    'app.core.configuration',
-    'app.core.application',
-    'app.project',
-    'website',
+    'board.core.account',
+    'board.core.configuration',
+    'board.core.application',
+    'board.api',
+    'board.app.desk',
+    'board.app.website',
 )
 
 MIDDLEWARE_CLASSES = (

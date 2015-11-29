@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from django.views.decorators.cache import cache_page
-from app.project.models import Project
+from board.app.project.models import Project
 
 def home(request):
 	project = Project.objects.last()

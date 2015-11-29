@@ -1,10 +1,14 @@
+from __future__ import unicode_literals
+
 from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.i18n import i18n_patterns
 
 from axes.decorators import watch_login
 from board.app.desk import views as desk
+
 from board.api.urls import router as api
+from board import core
 
 urlpatterns = [
     url(r'^logout/$', desk.logout),
@@ -12,6 +16,8 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
+    url(r'^$', 'board.app.website.views.home'),
+    url(r'^app/', include(core.urls)),
     url(r'^api/', include(api.urls)),
     url(r'^login/$', watch_login(desk.login)),
     url(r'^locked/$', desk.login, name='recaptcha'),
