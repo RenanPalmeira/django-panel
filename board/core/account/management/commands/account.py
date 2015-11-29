@@ -6,8 +6,8 @@ from django.conf import settings
 from django.utils.translation import activate
 from django.utils.translation import ugettext_lazy as _
 
-from app.account.models import Account
-from app.project.models import Project, ProjectAccount
+from board.core.account.models import Account
+from board.app.project.models import Project, ProjectAccount
 
 class Command(base.BaseCommand):
 	def handle(self, **options):
