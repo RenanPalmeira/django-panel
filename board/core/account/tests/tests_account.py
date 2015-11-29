@@ -2,9 +2,9 @@
 
 from django.test import TestCase
 from django.contrib.auth import authenticate
-from app.account.models import Account
+from board.core.account.models import Account
 
-class ClientModelTestCase(TestCase):
+class AccountTestCase(TestCase):
 	
 	def setUp(self):
 		self.account = Account()
