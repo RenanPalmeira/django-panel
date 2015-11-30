@@ -1,4 +1,5 @@
 var language = navigator.language=='pt-BR' ? 'pt' : 'en';
+var api_root = '/'+language+'/api/';
 
 var ApplicationBoardModel = Backbone.Model.extend({
 	urlRoot: '/'+language+'/api/app/',

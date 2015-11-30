@@ -1,10 +1,11 @@
 {% load i18n %}
-<div class="container">
-	<div class="col-md-12">
-		{% block app %}<h2><%= name %></h2>{% endblock %}
-	</div>
+<div class="white">
+	<div class="container">
+		<div class="col-md-12">
+			{% block app %}<h2><%= name %></h2>{% endblock %}
+		</div>
+	</div>	
 </div>
-<hr/>
 <div id="board-container" class="container">
 	{% block content %}{% endblock %}
 </div>

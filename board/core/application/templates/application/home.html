@@ -1,5 +1,5 @@
 {% extends "desk/app.html" %}
-{% load i18n %}
+{% load i18n compress %}
 {% block app %}
 	<h2>{% trans "Application" %}</h2>
 {% endblock %}
@@ -7,25 +7,41 @@
 	<div class="col-md-12">
 		<div class="col-md-3">
 			<ul class="menu">
-				<li>
-					<a href="#">
-						<i class="fa fa-angle-right"></i><span>Home</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i class="fa fa-angle-right"></i><span>Home</span>
-					</a>
-				</li>
-				<li>
+				<li class="active">
 					<a href="#">
 						<i class="fa fa-angle-right"></i><span>Home</span>
 					</a>
 				</li>
 			</ul>
 		</div>
-		<div class="col-md-9 box">
-		
+		<div class="col-md-9">
+			<div class="panel panel-default">
+	  			<div class="panel-heading">
+	    			<h3 class="panel-title">Application title</h3>
+	  			</div>
+	  			<div class="panel-body">
+		    		Application content
+  				</div>
+			</div>
 		</div>
 	</div>
+	{% compress js %}
+		<script type="text/javascript">
+			var api = Backbone.ajax({
+				url: api_root
+			});
+			api.success(function(context){
+				var menu = $('ul.menu');
+				var keys = _.keys(context);
+				_.each(keys, function(key){
+					var html = '';
+					html += '<li><a href="#"><i class="fa fa-angle-right"></i><span>';
+					html += key;
+					html += '</span></a></li>';
+
+					menu.append(html);
+				});
+			});
+		</script>
+	{% endcompress %}
 {% endblock %}
