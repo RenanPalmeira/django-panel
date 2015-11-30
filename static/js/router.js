@@ -26,10 +26,10 @@ app_router.on('route:desk', function(action, method) {
 	Backbone.ajax({
 		url: url,
 		success: function(context){
+			fadeOut();
 			$('.board').css('visibility', 'visible');
 			$('.board').html(context);
 		}
 	});
-	fadeOut();
 });
 Backbone.history.start();
