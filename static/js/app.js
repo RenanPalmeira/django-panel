@@ -1,3 +1,4 @@
+var apps = null; 
 function ajax(url, callback) {
 	var data = { url: url, success: callback};
 	Backbone.ajax(data);
@@ -21,12 +22,18 @@ $(window).keydown(function(e) {
 });
 
 (function() {
-  var _sync = Backbone.sync;
-  Backbone.sync = function(method, model, options){
-    options.beforeSend = function(xhr){
-      var token = $('meta[name="csrf-token"]').attr('content');
-      xhr.setRequestHeader('X-CSRFToken', token);
-    };
-    return _sync(method, model, options);
-  };
+	var _sync = Backbone.sync;
+	Backbone.sync = function(method, model, options) {
+		options.beforeSend = function(xhr) {
+			var token = $('meta[name="csrf-token"]').attr('content');
+			xhr.setRequestHeader('X-CSRFToken', token);
+		};
+		return _sync(method, model, options);
+	};
+	var api = Backbone.ajax({
+		url: api_root
+	});
+	api.success(function(context){
+		apps = _.keys(context);
+	});	
 })();

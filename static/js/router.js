@@ -23,13 +23,11 @@ app_router.on('route:desk', function(action, method) {
 	$('#loading').fadeIn();
 	
 	var url = "/" + language + "/app/" + action + "/";
-	Backbone.ajax({
-		url: url,
-		success: function(context){
-			fadeOut();
-			$('.board').css('visibility', 'visible');
-			$('.board').html(context);
-		}
+	var ajax = Backbone.ajax({url: url});
+	ajax.success(function(context){
+		fadeOut();
+		$('.board').css('visibility', 'visible');
+		$('.board').html(context);
 	});
 });
 Backbone.history.start();
