@@ -6,5 +6,5 @@ from django.conf.urls.i18n import i18n_patterns
 from .application import views as application
 
 urlpatterns = [
-    url(r'^application/$', application.home),
+    url(r'^(?P<slug>[\w-]+)/$', application.home),
 ]

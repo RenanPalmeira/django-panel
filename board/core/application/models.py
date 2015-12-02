@@ -20,4 +20,5 @@ class Application(models.Model):
 		return 'app/'+self.slug
 
 	class Meta:
+		app_label = "application"
 		db_table = "application"

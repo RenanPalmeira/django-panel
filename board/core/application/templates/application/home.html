@@ -27,21 +27,16 @@
 	</div>
 	{% compress js %}
 		<script type="text/javascript">
-			var api = Backbone.ajax({
-				url: api_root
-			});
-			api.success(function(context){
+			if(apps) {
 				var menu = $('ul.menu');
-				var keys = _.keys(context);
-				_.each(keys, function(key){
+				_.each(apps, function(key){
 					var html = '';
 					html += '<li><a href="#application/'+key+'"><i class="fa fa-angle-right"></i><span>';
 					html += key;
 					html += '</span></a></li>';
-
 					menu.append(html);
-				});
 			});
+		}
 		</script>
 	{% endcompress %}
 {% endblock %}
