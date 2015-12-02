@@ -19,8 +19,11 @@ var Router = Backbone.Router.extend({
 var app_router = new Router;
 
 app_router.on('route:desk', function(action, method) {
-	$('#loading').css('visibility', 'visible');
-	$('#loading').fadeIn();
+	if(method==null) {
+		$('#loading').css('visibility', 'visible');
+		$('#loading').fadeIn();
+
+	}
 	
 	var url = "/" + language + "/app/" + action + "/";
 	var ajax = Backbone.ajax({url: url});

@@ -1,14 +1,17 @@
 # -*- coding: utf-8 -*-
 
+from django.core.urlresolvers import resolve
 from django.shortcuts import render, redirect
+from django.utils.translation import ugettext as _
+from django.views.decorators.cache import never_cache
+
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as login_auth
-from django.utils.translation import ugettext as _
 
-from django.core.urlresolvers import resolve
 from board.core.account.forms import AccountForm
 
+@never_cache
 def login(request):
 	context = {}
 	current_url = resolve(request.path_info).url_name

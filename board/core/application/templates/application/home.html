@@ -1,15 +1,26 @@
 {% extends "desk/app.html" %}
 {% load i18n compress %}
+
 {% block app %}
-	<h2>{% trans "Application" %}</h2>
+	{% if app.name %}
+		<h2>{{ app.name }}</h2>
+	{% else %}
+		<h2>{% trans "Application" %}</h2>
+	{% endif %}
 {% endblock %}
+
 {% block content %}
 	<div class="col-md-12">
 		<div class="col-md-3">
 			<ul class="menu">
-				<li class="active">
-					<a href="#">
+				<li id="home" class="active" onclick="location.href='#{{ app.slug }}/home';">
+					<a href="javascript: void(0);">
 						<i class="fa fa-angle-right"></i><span>Home</span>
+					</a>
+				</li>
+				<li id="list" onclick="location.href='#{{ app.slug }}/list';">
+					<a href="javascript: void(0);">
+						<i class="fa fa-angle-right"></i><span>{% trans "Listing" %}</span>
 					</a>
 				</li>
 			</ul>
@@ -27,16 +38,7 @@
 	</div>
 	{% compress js %}
 		<script type="text/javascript">
-			if(apps) {
-				var menu = $('ul.menu');
-				_.each(apps, function(key){
-					var html = '';
-					html += '<li><a href="#application/'+key+'"><i class="fa fa-angle-right"></i><span>';
-					html += key;
-					html += '</span></a></li>';
-					menu.append(html);
-			});
-		}
+			board.init();
 		</script>
 	{% endcompress %}
 {% endblock %}

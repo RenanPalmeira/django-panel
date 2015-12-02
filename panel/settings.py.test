@@ -65,6 +65,17 @@ MIDDLEWARE_CLASSES = (
     'axes.middleware.FailedLoginMiddleware',
 )
 
+if DEBUG is False:
+    MIDDLEWARE_CLASSES += (
+        'htmlmin.middleware.HtmlMinifyMiddleware',
+        'htmlmin.middleware.MarkRequestMiddleware',
+        'django.middleware.cache.UpdateCacheMiddleware',
+        'django.middleware.common.CommonMiddleware',
+        'django.middleware.cache.FetchFromCacheMiddleware',
+    )
+
+    CACHE_MIDDLEWARE_SECONDS = 5 * 60
+
 AUTHENTICATION_BACKENDS = (
     'board.core.account.backends.AccountBackend',
 )

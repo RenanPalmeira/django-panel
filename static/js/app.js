@@ -1,4 +1,5 @@
 var apps = null; 
+
 function ajax(url, callback) {
 	var data = { url: url, success: callback};
 	Backbone.ajax(data);
@@ -37,3 +38,32 @@ $(window).keydown(function(e) {
 		apps = _.keys(context);
 	});	
 })();
+
+var board = {
+	init: function(slug) {
+		var menu = $('ul.menu');
+
+		if(Backbone.history.fragment.indexOf('application')>=0) {
+			if(apps) {	
+				_.each(apps, function(key){
+					var html = '';
+					html += '<li id="'+key+'" onclick="location.href=\'#application/'+key+'\';"><a href=\"javascript: void(0);\"><i class="fa fa-angle-right"></i><span>';
+					html += key;
+					html += '</span></a></li>';
+					menu.append(html);
+				});
+			}
+		}
+
+		if(Backbone.history.fragment.split('/').length==2) {
+			var method = Backbone.history.fragment.split('/');
+			method = $('ul.menu #'+method[1]);
+			if(_.isObject(method)) {
+				var li = $('ul.menu li').each(function(obj) {
+					$(this).removeClass('active');
+				})
+				method.addClass('active');
+			}
+		}
+	}
+}
