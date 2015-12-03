@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from rest_framework import viewsets, exceptions, response
+from rest_framework import viewsets, exceptions, response, decorators
 from board.api.pagination import CustomPagination
 
 class ViewSet(viewsets.ModelViewSet):
@@ -19,3 +19,8 @@ class ViewSet(viewsets.ModelViewSet):
 				pass
 
 		return queryset
+
+	@decorators.detail_route(methods=['get',])
+	def info(self, request, pk):
+		data = {}
+		return response.Response(data)
