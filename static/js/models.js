@@ -12,3 +12,8 @@ var ApplicationBoardModel = Backbone.Model.extend({
 			this.url = this.url()+"?loadtype=results";
 	}
 });
+
+
+var SocialModel = Backbone.Model.extend({
+	urlRoot: api_root+'social/'
+});

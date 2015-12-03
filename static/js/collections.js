@@ -5,3 +5,11 @@ var ApplicationBoardCollection = Backbone.Collection.extend({
 		this.url = this.url()+"?loadtype=results";
 	}
 });
+
+var SocialCollection = Backbone.Collection.extend({
+	model: SocialModel,
+	url: api_root+'social/',
+	initialize : function() {
+		this.url = this.url +"?loadtype=results";
+	}
+});

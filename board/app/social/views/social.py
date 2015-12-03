@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from board.api.views import ViewSet
-from board.app.social.serializers import SocialSerializer, Social
+from board.app.social.serializers import SocialSerializer, ProviderSocial
 
 class SocialViewSet(ViewSet):
-	model = Social
+	model = ProviderSocial
 	serializer_class = SocialSerializer

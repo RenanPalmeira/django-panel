@@ -40,6 +40,14 @@ $(window).keydown(function(e) {
 })();
 
 var board = {
+	item: function(app) {
+		var menu = $('ul.menu');
+		var html = '';
+		html += '<li id="'+app+'"><a href=\"javascript: void(0);\"><i class="fa fa-angle-right"></i><span>';
+		html += app;
+		html += '</span></a></li>';
+		menu.append(html);
+	},
 	init: function(slug) {
 		var menu = $('ul.menu');
 
