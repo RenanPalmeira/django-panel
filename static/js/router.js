@@ -22,9 +22,7 @@ app_router.on('route:desk', function(action, method) {
 	if(method==null) {
 		$('#loading').css('visibility', 'visible');
 		$('#loading').fadeIn();
-
 	}
-	
 	var url = "/" + language + "/app/" + action + "/";
 	var ajax = Backbone.ajax({url: url});
 	ajax.success(function(context){

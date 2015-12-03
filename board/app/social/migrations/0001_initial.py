@@ -13,33 +13,31 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Project',
+            name='ProviderSocial',
             fields=[
-                ('id_project', models.AutoField(serialize=False, primary_key=True)),
-                ('name', models.CharField(max_length=255)),
-                ('slug', models.SlugField(max_length=255)),
-                ('site', models.EmailField(max_length=155, null=True)),
+                ('id_provider_social', models.AutoField(serialize=False, primary_key=True)),
+                ('name', models.CharField(max_length=155)),
                 ('update_date', models.DateTimeField(auto_now=True)),
                 ('create_date', models.DateTimeField(auto_now_add=True)),
                 ('status', models.SmallIntegerField(default=1)),
             ],
             options={
-                'db_table': 'project',
+                'db_table': 'social_provider',
             },
         ),
         migrations.CreateModel(
-            name='ProjectAccount',
+            name='Social',
             fields=[
-                ('id_project_account', models.AutoField(serialize=False, primary_key=True)),
-                ('level', models.SmallIntegerField(default=1)),
+                ('id_social', models.AutoField(serialize=False, primary_key=True)),
+                ('token', models.CharField(max_length=155)),
+                ('username', models.CharField(max_length=155)),
                 ('update_date', models.DateTimeField(auto_now=True)),
                 ('create_date', models.DateTimeField(auto_now_add=True)),
                 ('status', models.SmallIntegerField(default=1)),
                 ('account', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
-                ('project', models.ForeignKey(to='project.Project')),
             ],
             options={
-                'db_table': 'project_account_set',
+                'db_table': 'social',
             },
         ),
     ]

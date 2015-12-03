@@ -1,0 +1,62 @@
+[
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-12-03T03:07:11.380Z",
+        "create_date": "2015-12-03T03:07:11.380Z",
+        "name": "Facebook"
+    },
+    "model": "social.providersocial",
+    "pk": 1
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-12-03T03:07:27.960Z",
+        "create_date": "2015-12-03T03:07:27.960Z",
+        "name": "Twitter"
+    },
+    "model": "social.providersocial",
+    "pk": 2
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-12-03T03:07:38.298Z",
+        "create_date": "2015-12-03T03:07:38.298Z",
+        "name": "Dropbox"
+    },
+    "model": "social.providersocial",
+    "pk": 3
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-12-03T03:07:42.853Z",
+        "create_date": "2015-12-03T03:07:42.853Z",
+        "name": "Google"
+    },
+    "model": "social.providersocial",
+    "pk": 4
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-12-03T03:07:49.955Z",
+        "create_date": "2015-12-03T03:07:49.955Z",
+        "name": "Outlook"
+    },
+    "model": "social.providersocial",
+    "pk": 5
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-12-03T03:07:57.510Z",
+        "create_date": "2015-12-03T03:07:57.510Z",
+        "name": "Disqus"
+    },
+    "model": "social.providersocial",
+    "pk": 6
+}
+]

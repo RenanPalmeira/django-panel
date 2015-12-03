@@ -13,7 +13,7 @@ class Command(base.BaseCommand):
 	def handle(self, **options):
 
 		call_command('migrate', verbosity=0, interactive=False)
-		call_command('loaddata', 'application', verbosity=0, interactive=False)
+		call_command('loaddata', 'application', 'providersocial', verbosity=0, interactive=False)
 		call_command('compilemessages', verbosity=0, interactive=False)
 
 		name = str(raw_input(_('Name of project: ')))

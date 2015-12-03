@@ -29,9 +29,16 @@
 			<div class="panel panel-default">
 	  			<div class="panel-heading">
 	    			<h3 class="panel-title">Application title</h3>
+	    			<button class="btn btn-primary btn-right">Novo registro</button>
 	  			</div>
 	  			<div class="panel-body">
-		    		Application content
+	  				{% if content %}
+		    			{% autoescape off %}
+		    				{{ content }}
+		    			{% endautoescape %}
+		    		{% else %}
+		    			Application content
+		    		{% endif %}
   				</div>
 			</div>
 		</div>

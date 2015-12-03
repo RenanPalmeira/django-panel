@@ -226,6 +226,9 @@ hr {
 	font-weight: 900;
 	line-height: 42px;
 }
+.btn-right {
+	float: right;
+}
 #loading{
 	visibility: hidden;
 	position: fixed;
