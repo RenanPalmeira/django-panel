@@ -14,3 +14,16 @@ var BoardView = Backbone.View.extend({
 		return this;
 	}
 });
+
+var AccountView = Backbone.View.extend({
+	el: $('#board-container'),
+	initialize: function(action) {
+		this.model = new AccountModel();
+		this.model.fetch();
+		this.listenTo(this.model, "change", this.render);
+	},
+	render: function(){
+		var data = this.model.get(0);
+		return this;
+	}
+});

@@ -46,12 +46,8 @@
 	{% compress js %}
 		<script type="text/javascript">
 			board.init();
-
-			{% if content %}
-				var n = 0;
-    			var model = new {{ app.slug|title }}Collection();
-				model.fetch();
-    		{% endif %}
+			var view = new {{ app.slug|title }}View();
+    		
 		</script>
 	{% endcompress %}
 {% endblock %}

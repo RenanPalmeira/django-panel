@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
 from board.api.views import ViewSet
 from board.core.configuration.serializers import ConfigurationSerializer, Configuration

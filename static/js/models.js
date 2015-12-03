@@ -13,7 +13,13 @@ var ApplicationBoardModel = Backbone.Model.extend({
 	}
 });
 
-
 var SocialModel = Backbone.Model.extend({
 	urlRoot: api_root+'social/'
+});
+
+var AccountModel = Backbone.Model.extend({
+	urlRoot: api_root+'account/',
+	initialize : function(options) {
+		this.url = this.url()+"?loadtype=results";
+	}
 });

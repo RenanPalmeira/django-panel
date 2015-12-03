@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
 from rest_framework import viewsets, exceptions, response, decorators
 from board.api.pagination import CustomPagination
