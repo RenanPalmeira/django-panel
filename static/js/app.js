@@ -40,6 +40,7 @@ $(window).keydown(function(e) {
 })();
 
 var board = {
+	items: [],
 	item: function(app) {
 		var menu = $('ul.menu');
 		var html = '';
@@ -48,19 +49,12 @@ var board = {
 		html += '</span></a></li>';
 		menu.append(html);
 	},
-	init: function(slug) {
-		var menu = $('ul.menu');
-
-		if(Backbone.history.fragment.indexOf('application')>=0) {
-			if(apps) {	
-				_.each(apps, function(key){
-					var html = '';
-					html += '<li id="'+key+'" onclick="location.href=\'#application/'+key+'\';"><a href=\"javascript: void(0);\"><i class="fa fa-angle-right"></i><span>';
-					html += key;
-					html += '</span></a></li>';
-					menu.append(html);
-				});
-			}
+	init: function() {
+		if(this.items) {
+			var self = this;
+			_.each(this.items, function(item) {
+				self.item(item);
+			})
 		}
 
 		if(Backbone.history.fragment.split('/').length==2) {

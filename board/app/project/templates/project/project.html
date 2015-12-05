@@ -1,0 +1,19 @@
+{% extends "application/application.html" %}
+{% load compress widget_tweaks %}
+{% block panel_title %}
+	{{ form.name.value }}
+{% endblock %}
+{% block app_load %}
+	<form>
+		{% for field in form %}
+			<label>{{ field.label }}</label>
+			{{ field|attr:'class:form-control' }}
+		{% endfor %}
+	</form>	
+	{% compress js %}
+		<script type="text/javascript">
+			board.items = [''];
+			board.init();
+		</script>
+	{% endcompress %}
+{% endblock %}

@@ -13,12 +13,10 @@ def home(request, slug = None):
 	context = {}
 	if not slug is None:
 		app = get_object_or_404(Application, slug=slug)
-		context['app'] = app
-
 		try:
 			view = import_string('board.app.%s.views.home' % slug)
-			context['content'] = view(request).content
+			return view(request)
 		except Exception, e:
 			print e
 		
-	return render(request, "application/home.html", context)
+	return render(request, "application/application.html", context)

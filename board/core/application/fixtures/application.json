@@ -44,13 +44,13 @@
 {
     "fields": {
         "status": 1,
-        "update_date": "2015-11-17T19:52:28.192Z",
+        "update_date": "2015-11-17T19:52:28.888Z",
         "create_date": "2015-11-16T09:00:37Z",
-        "name": "Configuration",
-        "color": "#0275d8",
-        "slug": "configuration",
+        "name": "Projeto",
+        "color": "#360090",
+        "slug": "project",
         "order": 4,
-        "icon": "octicon octicon-gear"
+        "icon": "octicon octicon-repo"
     },
     "model": "application.application",
     "pk": 4
@@ -63,8 +63,22 @@
         "name": "Application",
         "color": "#00bfff",
         "slug": "application",
-        "order": 9,
+        "order": 5,
         "icon": "octicon octicon-beaker"
+    },
+    "model": "application.application",
+    "pk": 5
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-11-17T19:52:28.192Z",
+        "create_date": "2015-11-16T09:00:37Z",
+        "name": "Configuration",
+        "color": "#0275d8",
+        "slug": "configuration",
+        "order": 9,
+        "icon": "octicon octicon-gear"
     },
     "model": "application.application",
     "pk": 9

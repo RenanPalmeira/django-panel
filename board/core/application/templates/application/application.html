@@ -1,0 +1,28 @@
+{% extends "desk/app.html" %}
+{% load i18n compress %}
+{% block app %}
+	<h2>{{ name }}</h2>
+{% endblock %}
+{% block content %}
+	<div class="col-md-12">
+		<div class="col-md-3">
+			<ul class="menu">
+				<li id="home" class="active" onclick="location.href='#{{ app.slug }}/home';">
+					<a href="javascript: void(0);">
+						<i class="fa fa-angle-right"></i><span>Home</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+			<div class="panel panel-default">
+	  			<div class="panel-heading">
+	    			<h3 class="panel-title">{% block panel_title %}{% endblock %}</h3>
+	    		</div>
+	  			<div class="panel-body">
+	  				{% block app_load %}{% endblock %}
+  				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
