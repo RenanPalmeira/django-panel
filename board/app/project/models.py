@@ -22,7 +22,6 @@ class Project(models.Model):
 class ProjectAccount(models.Model):
 	id_project_account = models.AutoField(primary_key=True)
 
-	project = models.ForeignKey(Project)
 	account = models.ForeignKey(Account)
 
 	level = models.SmallIntegerField(default=1)

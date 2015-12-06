@@ -17,7 +17,6 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     url(r'^$', 'board.app.website.views.home'),
-    url(r'^app/', include(core.urls)),
     url(r'^api/', include(api.urls)),
     url(r'^login/$', watch_login(desk.login)),
     url(r'^locked/$', desk.login, name='recaptcha'),

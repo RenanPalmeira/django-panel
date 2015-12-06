@@ -1,54 +1,31 @@
 {% load i18n %}
-<div class="container">
-	<div class="col-md-12">
-		<h2><%= name %></h2>
-	</div>
+<div class="white">
+	<div class="container">
+		<div class="col-md-12">
+			<h2><%= name %></h2>
+		</div>
+	</div>	
 </div>
-<hr/>
 <div id="board-container" class="container">
 	<div class="col-md-12">
 		<div class="col-md-3">
 			<ul class="menu">
-				<li>	
-					<a href="#">
+				<li id="home" class="active" onclick="location.href='#/home';">
+					<a href="javascript: void(0);">
 						<i class="fa fa-angle-right"></i><span>Home</span>
 					</a>
 				</li>
 			</ul>
 		</div>
-		<div class="col-md-9 box">
-			<% if (step == "create") { %>
-				<div class="col-md-8">
-					{% include "desk/form.html" %}
-				</div>
-			<% } else { %>
-				<div class="app" onclick="window.location='#<%= slug %>/create';">
-				<h1>{% trans "Create" %} <%= name %></h1>
-				<p>...</p>
+		<div class="col-md-9">
+			<div class="panel panel-default">
+	  			<div class="panel-heading">
+	    			<h3 class="panel-title"><%= name %></h3>
+	    		</div>
+	  			<div class="panel-body">
+	  				
+  				</div>
 			</div>
-			<div class="app" onclick="window.location='#<%= slug %>/list';">
-				<h1>{% trans "List" %} <%= name %></h1>
-				<p>...</p>
-			</div>
-			<div class="app" onclick="window.location='#<%= slug %>/delete';">
-				<h1>{% trans "Delete" %} <%= name %></h1>
-				<p>...</p>
-			</div>
-			<% } %>
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	$("form").on("submit", function(event){
-		event.preventDefault();
-		var fields = $(this).serializeArray();
-		var model = new ApplicationBoardModel({
-			'id':9
-		});
-		model.fetch();
-		$.each(fields, function(index, field) {
-			console.log(model);
-		})
-		return false;
-	});
-</script>
