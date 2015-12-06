@@ -31,12 +31,6 @@ $(window).keydown(function(e) {
 		};
 		return _sync(method, model, options);
 	};
-	var api = Backbone.ajax({
-		url: api_root
-	});
-	api.success(function(context){
-		apps = _.keys(context);
-	});	
 })();
 
 var board = {

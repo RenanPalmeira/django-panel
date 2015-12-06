@@ -1,3 +1,7 @@
+var i18n = {
+	'account': 'conta',
+	'project': 'Projeto'
+};
 var fadeOut = function() {
 	$('#loading').css('visibility', 'visible');
 	$('#loading').fadeOut();
@@ -23,12 +27,10 @@ app_router.on('route:desk', function(action, method) {
 		$('#loading').css('visibility', 'visible');
 		$('#loading').fadeIn();
 	}
-	var url = "/" + language + "/app/" + action + "/";
-	var ajax = Backbone.ajax({url: url});
-	ajax.success(function(context){
-		fadeOut();
-		$('.board').css('visibility', 'visible');
-		$('.board').html(context);
-	});
+	
+	var view = new BoardView(action);
+	$('#loading').css('visibility', 'hidden');
+	$('#loading').fadeIn();
+	$('.board').css('visibility', 'visible');
 });
 Backbone.history.start();
