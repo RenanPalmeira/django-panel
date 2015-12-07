@@ -17,14 +17,3 @@ var BoardModel = Backbone.Model.extend({
 		return resp.results;
 	}
 });
-
-var SocialModel = Backbone.Model.extend({
-	urlRoot: api_root+'social/'
-});
-
-var AccountModel = Backbone.Model.extend({
-	urlRoot: api_root+'account/',
-	initialize : function(options) {
-		this.url = this.url()+"?loadtype=results";
-	}
-});
