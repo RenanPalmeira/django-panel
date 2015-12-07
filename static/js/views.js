@@ -7,7 +7,7 @@ var BoardView = Backbone.View.extend({
 		this.listenTo(this.model, "change", this.render);
 	},
 	render: function(){
-		var data = this.model.get(0);
+		var data = this.model.toJSON();
 		this.$el.html(this.template(data));
 		return this;
 	}
@@ -21,7 +21,7 @@ var AccountView = Backbone.View.extend({
 		this.listenTo(this.model, "change", this.render);
 	},
 	render: function(){
-		var data = this.model.get(0);
+		var data = this.model.get('name');
 		return this;
 	}
 });

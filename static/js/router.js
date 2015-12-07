@@ -1,7 +1,3 @@
-var i18n = {
-	'account': 'conta',
-	'project': 'Projeto'
-};
 var fadeOut = function() {
 	$('#loading').css('visibility', 'visible');
 	$('#loading').fadeOut();
