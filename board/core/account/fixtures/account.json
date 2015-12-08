@@ -1,0 +1,17 @@
+[
+{
+    "fields": {
+        "username": "bigboss",
+        "update_date": "2015-12-08T13:54:09.371Z",
+        "first_name": null,
+        "last_name": null,
+        "create_date": "2015-12-08T13:54:09.371Z",
+        "status": 1,
+        "last_login": null,
+        "password": "pbkdf2_sha256$20000$G8ditpLjHihR$TvErR/2wk5d7jwUXBKrg2FaB/L14T5ls4W+F5Tjew5w=",
+        "email": "bigboss@forleven.com"
+    },
+    "model": "account.account",
+    "pk": 2
+}
+]

@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 
-from django.test import TestCase
-from rest_framework.test import APIRequestFactory
+from django.test import TestCase, Client
+from rest_framework.test import APIRequestFactory, APIClient
 
 class AccountAPITestCase(TestCase):
-	
+	fixtures = ['account.json', ]
 	def setUp(self):
 		self.factory = APIRequestFactory()
+		self.client = APIClient()
 
 	def test_api_get(self):
-		request = self.factory.get('/en/api/account/')
+		self.client.login(username='bigboss', password='bigboss')
+		request = self.client.get('/en/api/account/')
