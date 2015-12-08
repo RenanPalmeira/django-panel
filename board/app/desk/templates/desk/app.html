@@ -1,11 +1,11 @@
-{% load i18n %}
+{% load i18n compress %}
 <div class="white">
 	<div class="container">
 		<div class="col-md-12">
-			{% block app %}{% endblock %}
+			<h2>{% block appname %}{% endblock %}</h2>
 		</div>
 	</div>	
 </div>
 <div id="board-container" class="container">
-	{% block content %}{% endblock %}
+	{% block board %}{% endblock %}
 </div>

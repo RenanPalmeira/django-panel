@@ -1,15 +1,14 @@
 var BoardView = Backbone.View.extend({
 	el: $('.board'),
-	template: _.template($('#board_template').html()),
 	initialize: function(action) {
-		this.model = new BoardModel({base:action});
-		this.model.fetch();
-		this.listenTo(this.model, "change", this.render);
-	},
-	render: function(){
-		var data = this.model.toJSON();
-		this.$el.html(this.template(data));
-		return this;
+		var self = this;
+		var url = language+"/app/"+action+"/";
+		var ajax = Backbone.ajax({
+			url: url
+		});
+		ajax.success(function(context) {
+			self.$el.html(context);
+		});
 	}
 });
 
