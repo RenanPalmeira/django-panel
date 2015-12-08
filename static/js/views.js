@@ -2,7 +2,7 @@ var BoardView = Backbone.View.extend({
 	el: $('.board'),
 	template: _.template($('#board_template').html()),
 	initialize: function(action) {
-		this.model = new ApplicationModel({id:action});
+		this.model = new BoardModel({base:action});
 		this.model.fetch();
 		this.listenTo(this.model, "change", this.render);
 	},

@@ -53,7 +53,7 @@
 					<div class="app-icon" style="background-color: {{ app.color }};">
 						<span class="{{ app.icon }}"></span>
 					</div>
-					<div class="app-title">{{ app.name|title }}</div>
+					<div id="{{ app.slug }}" class="app-title">{{ app.name|title }}</div>
 				</div>
 			{% endfor %}
 		</div>
