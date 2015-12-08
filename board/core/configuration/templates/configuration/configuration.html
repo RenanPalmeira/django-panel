@@ -1,0 +1,65 @@
+{% extends "desk/app.html" %}
+{% load i18n %}
+{% block appname %}
+	{% trans "Configuration" %}
+{% endblock %}
+{% block board %}
+	<div class="col-md-12">
+		<div class="col-md-3">
+			<ul class="menu">
+				<li id="home" class="active" onclick="location.href='#configuration/home';">
+					<a href="javascript: void(0);">
+						<i class="fa fa-angle-right"></i><span>Geral</span>
+					</a>
+				</li>
+				<li id="home" class="active" onclick="location.href='#configuration/home';">
+					<a href="javascript: void(0);">
+						<i class="fa fa-angle-right"></i><span>Permissões</span>
+					</a>
+				</li>
+				<li id="home" class="active" onclick="location.href='#configuration/home';">
+					<a href="javascript: void(0);">
+						<i class="fa fa-angle-right"></i><span>Backup's</span>
+					</a>
+				</li>
+				<li id="home" class="active" onclick="location.href='#configuration/home';">
+					<a href="javascript: void(0);">
+						<i class="fa fa-angle-right"></i><span>Sobre</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+			<div id="panel" class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Geral</h3>
+				</div>
+				<div class="panel-body">
+					<div class="col-md-12">
+						<label>Notificações por e-mail</label>
+						<div class="switch-container">
+							<input id="switch-shadow" class="switch switch-shadow" type="checkbox" checked="true">
+							<label for="switch-shadow"></label>
+						</div>
+					</div>
+
+					<div class="col-md-12">
+						<label>Log de erros</label>
+						<div class="switch-container">
+							<input id="switch-shadow1" class="switch switch-shadow" type="checkbox">
+							<label for="switch-shadow1"></label>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<label>Encerrar sessão sempre que sair do navegador</label> <i class="fa fa-question"></i>
+						<div class="switch-container">
+							<input id="switch-shadow3" class="switch switch-shadow" type="checkbox"/>
+							<label for="switch-shadow3"></label>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
