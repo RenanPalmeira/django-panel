@@ -22,6 +22,7 @@ class Configuration(models.Model):
 		return 'app/'+self.slug
 
 	class Meta:
+		app_label = "configuration"
 		db_table = "configuration"
 
 class Permission(models.Model):
@@ -39,4 +40,5 @@ class Permission(models.Model):
 		return self.key
 
 	class Meta:
+		app_label = "configuration"
 		db_table = "permission"
