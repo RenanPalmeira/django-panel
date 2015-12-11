@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'board.app.desk',
     'board.app.website',
     'board.app.project',
+    'board.app.social',
 )
 
 MIDDLEWARE_CLASSES = (
