@@ -18,11 +18,11 @@
         "status": 1,
         "update_date": "2015-11-17T19:52:28.192Z",
         "create_date": "2015-11-16T09:00:37Z",
-        "name": "Account",
-        "color": "#A92837",
-        "slug": "account",
+        "name": "Noticias",
+        "color": "#11B1C1",
+        "slug": "news",
         "order": 2,
-        "icon": "octicon octicon-person"
+        "icon": "octicon octicon-book"
     },
     "model": "application.application",
     "pk": 2
@@ -32,11 +32,11 @@
         "status": 1,
         "update_date": "2015-11-17T19:52:28.192Z",
         "create_date": "2015-11-16T09:00:37Z",
-        "name": "Redes sociais",
-        "color": "#0AA24E",
-        "slug": "social",
+        "name": "Account",
+        "color": "#A92837",
+        "slug": "account",
         "order": 3,
-        "icon": "octicon octicon-mention"
+        "icon": "octicon octicon-person"
     },
     "model": "application.application",
     "pk": 3
@@ -44,13 +44,13 @@
 {
     "fields": {
         "status": 1,
-        "update_date": "2015-11-17T19:52:28.888Z",
+        "update_date": "2015-11-17T19:52:28.192Z",
         "create_date": "2015-11-16T09:00:37Z",
-        "name": "Projeto",
-        "color": "#360090",
-        "slug": "project",
+        "name": "Redes sociais",
+        "color": "#0AA24E",
+        "slug": "social",
         "order": 4,
-        "icon": "octicon octicon-repo"
+        "icon": "octicon octicon-mention"
     },
     "model": "application.application",
     "pk": 4
@@ -60,14 +60,28 @@
         "status": 1,
         "update_date": "2015-11-17T19:52:28.888Z",
         "create_date": "2015-11-16T09:00:37Z",
-        "name": "Application",
-        "color": "#00bfff",
-        "slug": "application",
+        "name": "Projeto",
+        "color": "#360090",
+        "slug": "project",
         "order": 5,
-        "icon": "octicon octicon-beaker"
+        "icon": "octicon octicon-repo"
     },
     "model": "application.application",
     "pk": 5
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-11-17T19:52:28.888Z",
+        "create_date": "2015-11-16T09:00:37Z",
+        "name": "Application",
+        "color": "#00bfff",
+        "slug": "application",
+        "order": 6,
+        "icon": "octicon octicon-beaker"
+    },
+    "model": "application.application",
+    "pk": 6
 },
 {
     "fields": {

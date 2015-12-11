@@ -1,0 +1,38 @@
+{% extends "desk/app.html" %}
+{% load i18n %}
+{% block appname %}
+	{% trans "Notícias" %}
+{% endblock %}
+{% block board %}
+	<div class="col-md-12">
+		<div class="col-md-3">
+			<ul class="menu">
+				<li id="home" class="active" onclick="location.href='#social/home';">
+					<a href="javascript: void(0);">
+						<i class="fa fa-angle-right"></i><span>Home</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+			<div id="panel" class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{ account.first_name|title }}</h3>
+				</div>
+				<div class="panel-body">
+					<div class="col-md-9">
+						<div>
+							<label>Nome:</label>
+							{{ account.username|title }}
+						</div>
+						<label>E-Mail:</label>
+						{{ account.email }}
+					</div>
+					<div class="col-md-3 text-right">
+						<button class="btn btn-success"><i class="fa fa-pencil"></i>&nbsp; {% trans "Edit" %}</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
