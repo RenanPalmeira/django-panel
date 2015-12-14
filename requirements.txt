@@ -16,3 +16,4 @@ whitenoise==1.0.6
 gunicorn==19.1.1
 psycopg2==2.5.3
 paramiko>=1.10
+locustio>=0.7.3
