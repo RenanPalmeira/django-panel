@@ -10,6 +10,7 @@ from board.app.desk import views as desk
 from board.api.urls import router as api
 from board import core
 from board import app
+from board.app import website
 
 urlpatterns = [
     url(r'^logout/$', desk.logout),
@@ -21,6 +22,7 @@ urlpatterns += i18n_patterns(
     url(r'^app/', include(core.urls)),
     url(r'^app/', include(app.urls)),
     url(r'^api/', include(api.urls)),
+    url(r'^site/', include(website.urls)),
     url(r'^login/$', watch_login(desk.login)),
     url(r'^locked/$', desk.login, name='recaptcha'),
 )
