@@ -1,6 +1,7 @@
 media/*
 production_website/
 settings.py
+*.rdb
 *.pyc
 *.sqlite3
 *.sqlite
