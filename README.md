@@ -6,6 +6,12 @@
 
 Using Foreman (https://github.com/ddollar/foreman) or Honcho (https://github.com/nickstenning/honcho)
 
+## Celery and Redis
+
+	http://www.celeryproject.org/install/
+
+	http://redis.io/download
+
 ## Install
 
   pip install -r requirements.txt
