@@ -1,5 +1,9 @@
 media/*
 production_website/
+bin/
+include/
+lib/
+local/
 settings.py
 *.rdb
 *.pyc
