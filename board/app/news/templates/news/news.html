@@ -5,7 +5,7 @@
 {% endblock %}
 {% block board %}
 	<div class="col-md-12">
-		<div class="col-md-3">
+		<div id="menu" class="col-md-3">
 			<ul class="menu">
 				<li id="home" class="active" onclick="location.href='#social/home';">
 					<a href="javascript: void(0);">
@@ -14,25 +14,88 @@
 				</li>
 			</ul>
 		</div>
-		<div class="col-md-9">
-			<div id="panel" class="panel panel-default">
+		<div id="panel" class="col-md-9">
+			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">{{ account.first_name|title }}</h3>
+					<div class="col-md-6">
+						<h3 class="panel-title"><i class="fa fa-newspaper-o"></i>
+ Nova {% trans "Notícia" %}</h3>
+					</div>
+					<div class="col-md-6">
+						<i id="max" class="fa fa-square-o text-right"></i>
+					</div>
 				</div>
 				<div class="panel-body">
-					<div class="col-md-9">
-						<div>
-							<label>Nome:</label>
-							{{ account.username|title }}
-						</div>
-						<label>E-Mail:</label>
-						{{ account.email }}
-					</div>
-					<div class="col-md-3 text-right">
-						<button class="btn btn-success"><i class="fa fa-pencil"></i>&nbsp; {% trans "Edit" %}</button>
+					<div class="col-md-12">
+						<form>
+							<div class="col-md-8">
+								<div class="form-group">
+									<label for="title">Título</label>
+	    							<input type="title" class="form-control" id="title" placeholder="Título">
+								</div>
+								<div class="form-group">
+									<label for="Site">Site</label>
+	    							<input type="Site" class="form-control" id="Site" placeholder="Site">
+								</div>
+								<div class="form-group">
+									<label>Mensagem</label>
+									<textarea class="form-control" rows="10"></textarea>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label><i class="fa fa-share-alt"></i> Públicar em redes sociais</label>
+									<div class="switch-container">
+										<input id="switch-shadow" class="switch switch-shadow" type="checkbox">
+										<label for="switch-shadow"></label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label><i class="fa fa-exchange"></i> Acessar site da notícia</label>
+									<div class="switch-container">
+										<input id="switch-shadow1" class="switch switch-shadow" type="checkbox">
+										<label for="switch-shadow1"></label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label><i class="fa fa-comments"></i> Ativar Comentários</label>
+									<div class="switch-container">
+										<input id="switch-shadow2" class="switch switch-shadow" type="checkbox" checked="true">
+										<label for="switch-shadow2"></label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label><i class="fa fa-location-arrow"></i> Localização</label>
+									<div class="switch-container">
+										<input id="switch-shadow3" class="switch switch-shadow" type="checkbox">
+										<label for="switch-shadow3"></label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								
+								<div class="form-group">
+									<button class="btn btn-primary"><i class="fa fa-send"></i>&nbsp; {% trans "Públicar" %}</button>
+									<button class="btn btn-success"><i class="fa fa-pencil-square-o"></i>&nbsp; {% trans "Salvar" %}</button>
+									<button class="btn btn-danger"><i class="fa fa-times"></i>&nbsp; {% trans "Cancelar" %}</button>
+								</div>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('#max').click(function(){
+				var menu = $('#menu');
+				menu.toggleClass('hidden');
+				if(menu.attr('class').indexOf('hidden')>=0)
+					$('#panel').attr('class', 'col-md-12');
+				else
+					$('#panel').attr('class', 'col-md-9');
+			});
+		});
+	</script>
 {% endblock %}
