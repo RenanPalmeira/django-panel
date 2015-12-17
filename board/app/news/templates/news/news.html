@@ -1,5 +1,5 @@
 {% extends "desk/app.html" %}
-{% load i18n %}
+{% load i18n widget_tweaks %}
 {% block appname %}
 	{% trans "Notícias" %}
 {% endblock %}
@@ -18,8 +18,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<div class="col-md-6">
-						<h3 class="panel-title"><i class="fa fa-newspaper-o"></i>
- Nova {% trans "Notícia" %}</h3>
+						<h3 class="panel-title"><i class="fa fa-newspaper-o"></i> Nova {% trans "Notícia" %}</h3>
 					</div>
 					<div class="col-md-6">
 						<i id="max" class="fa fa-square-o text-right"></i>
@@ -30,50 +29,34 @@
 						<form>
 							<div class="col-md-8">
 								<div class="form-group">
-									<label for="title">Título</label>
-	    							<input type="title" class="form-control" id="title" placeholder="Título">
+									{{ form.title.label_tag }}
+	    							{{ form.title|attr:'class:form-control' }}
 								</div>
 								<div class="form-group">
-									<label for="Site">Site</label>
-	    							<input type="Site" class="form-control" id="Site" placeholder="Site">
+									{{ form.reference.label_tag }}
+	    							{{ form.reference|attr:'class:form-control' }}
 								</div>
 								<div class="form-group">
 									<label>Mensagem</label>
-									<textarea class="form-control" rows="10"></textarea>
+									{{ form.content|attr:'class:form-control' }}
 								</div>
 							</div>
 							<div class="col-md-4">
-								<div class="form-group">
-									<label><i class="fa fa-share-alt"></i> Públicar em redes sociais</label>
-									<div class="switch-container">
-										<input id="switch-shadow" class="switch switch-shadow" type="checkbox">
-										<label for="switch-shadow"></label>
+								{% for item in configuration %}
+									<div class="form-group">
+										<label><i class="{{ item.icon }}"></i> {{ item.key|title }}</label>
+										<div class="switch-container">
+											{% if item.value|length >= 0 and item.value != 'false' %}
+												<input id="switch-shadow{{forloop.counter}}" class="switch switch-shadow" type="checkbox" checked="true" />
+											{% else %}
+												<input id="switch-shadow{{forloop.counter}}" class="switch switch-shadow" type="checkbox"/>
+											{% endif %}
+											<label for="switch-shadow{{forloop.counter}}"></label>
+										</div>
 									</div>
-								</div>
-								<div class="form-group">
-									<label><i class="fa fa-exchange"></i> Acessar site da notícia</label>
-									<div class="switch-container">
-										<input id="switch-shadow1" class="switch switch-shadow" type="checkbox">
-										<label for="switch-shadow1"></label>
-									</div>
-								</div>
-								<div class="form-group">
-									<label><i class="fa fa-comments"></i> Ativar Comentários</label>
-									<div class="switch-container">
-										<input id="switch-shadow2" class="switch switch-shadow" type="checkbox" checked="true">
-										<label for="switch-shadow2"></label>
-									</div>
-								</div>
-								<div class="form-group">
-									<label><i class="fa fa-location-arrow"></i> Localização</label>
-									<div class="switch-container">
-										<input id="switch-shadow3" class="switch switch-shadow" type="checkbox">
-										<label for="switch-shadow3"></label>
-									</div>
-								</div>
+								{% endfor %}
 							</div>
 							<div class="col-md-12">
-								
 								<div class="form-group">
 									<button class="btn btn-primary"><i class="fa fa-send"></i>&nbsp; {% trans "Públicar" %}</button>
 									<button class="btn btn-success"><i class="fa fa-pencil-square-o"></i>&nbsp; {% trans "Salvar" %}</button>

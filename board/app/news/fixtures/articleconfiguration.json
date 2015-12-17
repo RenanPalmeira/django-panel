@@ -1,0 +1,50 @@
+[
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-12-17T17:44:42.665Z",
+        "create_date": "2015-12-17T17:44:42.665Z",
+        "value": "false",
+        "key": "P\u00fablicar em redes sociais",
+        "icon": "fa fa-share-alt"
+    },
+    "model": "news.articleconfiguration",
+    "pk": 1
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-12-17T17:50:47.031Z",
+        "create_date": "2015-12-17T17:49:56.616Z",
+        "value": "false",
+        "key": "Acessar site da not\u00edcia",
+        "icon": "fa fa-exchange"
+    },
+    "model": "news.articleconfiguration",
+    "pk": 2
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-12-17T17:52:01.409Z",
+        "create_date": "2015-12-17T17:50:27.976Z",
+        "value": "true",
+        "key": "Ativar Coment\u00e1rios",
+        "icon": "fa fa-comments"
+    },
+    "model": "news.articleconfiguration",
+    "pk": 3
+},
+{
+    "fields": {
+        "status": 1,
+        "update_date": "2015-12-17T17:51:15.597Z",
+        "create_date": "2015-12-17T17:51:15.597Z",
+        "value": "false",
+        "key": "Localiza\u00e7\u00e3o",
+        "icon": "fa fa-location-arrow"
+    },
+    "model": "news.articleconfiguration",
+    "pk": 4
+}
+]

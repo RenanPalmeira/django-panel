@@ -3,6 +3,7 @@ production_website/
 bin/
 include/
 lib/
+kombu/
 local/
 settings.py
 *.rdb

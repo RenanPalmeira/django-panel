@@ -19,6 +19,10 @@ Using Foreman (https://github.com/ddollar/foreman) or Honcho (https://github.com
 
 	python manage.py account
 
+## Update
+
+	python manage.py update
+
 ## Other link's
 
 ### Celery and Redis in Windows
