@@ -23,10 +23,17 @@ Using Foreman (https://github.com/ddollar/foreman) or Honcho (https://github.com
 
 	python manage.py update
 
+## Tests with JMeter
+
+	jmeter -n -t test/DjangoPlan.jmx -l test/DjangoPlan.log
+
 ## Other link's
 
-### Celery and Redis in Windows
+## Install JMeter
 
+http://jmeter.apache.org/usermanual/get-started.html
+
+### Celery and Redis in Windows
 
 http://mrtn.me/blog/2012/07/04/django-on-windows-run-celery-as-a-windows-service/
 
