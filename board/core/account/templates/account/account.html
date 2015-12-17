@@ -1,5 +1,5 @@
 {% extends "desk/app.html" %}
-{% load i18n %}
+{% load i18n gravatar %}
 {% block appname %}
 	{% trans "Account" %}
 {% endblock %}
@@ -21,6 +21,9 @@
 				</div>
 				<div class="panel-body">
 					<div class="col-md-9">
+						<div>
+							<img src="{% gravatar_url account.email %}"/>
+						</div>
 						<div>
 							<label>Nome:</label>
 							{{ account.username|title }}

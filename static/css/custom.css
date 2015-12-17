@@ -257,6 +257,11 @@ hr {
 	padding-bottom: 0px;
 	border: 0px;
 }
+.panel-body img {
+	border-radius: 6px;
+	max-width: 40px;
+	max-height: 40px;
+}
 .btn-right {
 	float: right;
 }
