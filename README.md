@@ -33,6 +33,8 @@ Using Foreman (https://github.com/ddollar/foreman) or Honcho (https://github.com
 
 http://jmeter.apache.org/usermanual/get-started.html
 
+*Disclaimer:* Don’t be evil! Use JMeter in the light side
+
 ### Celery and Redis in Windows
 
 http://mrtn.me/blog/2012/07/04/django-on-windows-run-celery-as-a-windows-service/
