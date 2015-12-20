@@ -26,8 +26,9 @@
 				</div>
 				<div class="panel-body">
 					<div class="col-md-12">
-						<form>
+						<form action="{{ request.path }}" method="POST">
 							<div class="col-md-8">
+								{% csrf_token %}
 								<div class="form-group">
 									{{ form.title.label_tag }}
 	    							{{ form.title|attr:'class:form-control' }}
@@ -57,6 +58,27 @@
 								{% endfor %}
 							</div>
 							<div class="col-md-12">
+								{% if messages %}
+									<div class="form-group">
+										{% for message in messages %}
+											{% if message.tags == 'error' %}
+												<div class="alert alert-danger">
+													<i class="fa fa-exclamation"></i>&nbsp; {{ message|title }}
+													<div class="alert-right">
+														<i class="fa fa-times"></i>
+													</div>
+												</div>
+											{% elif message.tags == 'warning' %}
+												<div class="alert alert-warning">
+													<i class="fa fa-exclamation-triangle"></i></i>&nbsp; {{ message|title }}
+													<div class="alert-right">
+														<i class="fa fa-times"></i>
+													</div>
+												</div>
+											{% endif %}
+										{% endfor %}
+									</div>
+								{% endif %}
 								<div class="form-group">
 									<button class="btn btn-primary"><i class="fa fa-send"></i>&nbsp; {% trans "Públicar" %}</button>
 									<button class="btn btn-success"><i class="fa fa-pencil-square-o"></i>&nbsp; {% trans "Salvar" %}</button>
