@@ -3,6 +3,9 @@ var BoardView = Backbone.View.extend({
 	initialize: function(action, method) {
 		var self = this;
 		var url = language+"/app/"+action+"/";
+		self.$el.ajaxStart(function(){
+			alert("dad");
+		});
 		var ajax = Backbone.ajax({
 			url: url
 		});

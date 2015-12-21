@@ -23,6 +23,11 @@ $(window).keydown(function(e) {
 });
 
 (function() {
+	$(document).bind("ajaxSend", function(){
+		NProgress.start();
+	}).bind("ajaxComplete", function(){
+		NProgress.done();
+	});
 	var _sync = Backbone.sync;
 	Backbone.sync = function(method, model, options) {
 		options.beforeSend = function(xhr) {
