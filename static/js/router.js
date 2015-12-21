@@ -23,8 +23,9 @@ app_router.on('route:desk', function(action, method) {
 		$('#loading').css('visibility', 'visible');
 		$('#loading').fadeIn();
 	}
-	
-	var view = new BoardView(action);
+	var view = new BoardView(action, method);
+	if(method)
+		var view = new PanelView(action, method);
 	$('#loading').css('visibility', 'hidden');
 	$('#loading').fadeIn();
 	$('.board').css('visibility', 'visible');

@@ -1,6 +1,6 @@
 var BoardView = Backbone.View.extend({
 	el: $('.board'),
-	initialize: function(action) {
+	initialize: function(action, method) {
 		var self = this;
 		var url = language+"/app/"+action+"/";
 		var ajax = Backbone.ajax({
@@ -12,15 +12,17 @@ var BoardView = Backbone.View.extend({
 	}
 });
 
-var AccountView = Backbone.View.extend({
-	el: $('#board-container'),
-	initialize: function(action) {
-		this.model = new AccountModel();
-		this.model.fetch();
-		this.listenTo(this.model, "change", this.render);
-	},
-	render: function(){
-		var data = this.model.get('name');
-		return this;
+var PanelView = Backbone.View.extend({
+	el: $('.board #panel'),
+	initialize: function(action, method) {
+		var self = this;
+		var url = language+"/app/"+action+"/"+method+"/";
+
+		var ajax = Backbone.ajax({
+			url: url
+		});
+		ajax.success(function(context) {
+			self.$el.html("context");
+		});
 	}
 });

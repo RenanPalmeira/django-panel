@@ -9,4 +9,5 @@ from .social import views as social
 urlpatterns = [
     url(r'^social/$', social.home),
     url(r'^news/$', news.home),
+    url(r'^news/list/$', news.listing),
 ]
