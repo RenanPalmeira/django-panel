@@ -24,4 +24,4 @@ def twitter(request):
 	context = {
 		'redirect_url': redirect_url,
 	}
-	return render(request, 'social/social.html', context)
+	return render(request, 'social/twitter.html', context)

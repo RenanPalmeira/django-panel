@@ -234,6 +234,9 @@ STATICFILES_FINDERS = (
 
 MEDIA_ROOT = 'mediafiles'
 
+TWITTER_API_KET = ''
+TWITTER_API_SECRET = ''
+
 if DEBUG:
     INSTALLED_APPS += (
         'debug_toolbar',

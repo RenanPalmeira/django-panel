@@ -1,8 +1,9 @@
 from __future__ import unicode_literals
 
+from django.conf import settings
 from tweepy import OAuthHandler
 
-TWITTER_API_KET = 'BrIw1uaHiwtLuMR4fPEdZvWIn'
-TWITTER_API_SECRET = 'ElACMUj36nvrwTWtwlQthvjVsmNF3u42k4hEsO2Puqv0mVtl23'
+TWITTER_API_KET =  settings.TWITTER_API_KET
+TWITTER_API_SECRET = settings.TWITTER_API_SECRET
 
 TwitterProvider = OAuthHandler(TWITTER_API_KET, TWITTER_API_SECRET)
