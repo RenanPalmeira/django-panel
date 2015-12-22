@@ -21,6 +21,9 @@ class Article(models.Model):
 	create_date = models.DateTimeField(auto_now_add=True)
 	status = models.SmallIntegerField(default=1)
 
+	def __unicode__(self):
+		return {}
+
 	class Meta:
 		app_label = "news"
 		db_table = "article"

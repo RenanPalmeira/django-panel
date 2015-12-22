@@ -8,7 +8,8 @@ from .social import views as social
 
 urlpatterns = [
     url(r'^social/$', social.home),
-    url(r'^twitter/$', social.twitter),
+    url(r'^social/twitter/$', social.twitter),
+    url(r'^social/twitter/callback/$', social.twitter_callback),
     url(r'^news/$', news.home),
     url(r'^news/list/$', news.listing),
 ]
