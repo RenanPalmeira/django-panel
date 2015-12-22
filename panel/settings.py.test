@@ -155,10 +155,10 @@ AXES_LOCKOUT_URL = '/locked/'
 
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': True,
+    'disable_existing_loggers': False,
     'formatters': {
         'simple': {
-            'format': '%(levelname)s %(message)s',
+            'format': '[%(levelname)s] %(message)s',
              'datefmt': '%y %b %d, %H:%M:%S',
             },
         },
@@ -177,9 +177,10 @@ LOGGING = {
         },
     },
     'loggers': {
-        '': {
+        'board': {
             'handlers': ['console',],
             'level': 'DEBUG',
+            'propagate': True,
         },
     }
 }
@@ -234,7 +235,7 @@ STATICFILES_FINDERS = (
 
 MEDIA_ROOT = 'mediafiles'
 
-TWITTER_API_KET = ''
+TWITTER_API_KEY = ''
 TWITTER_API_SECRET = ''
 
 if DEBUG:
