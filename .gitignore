@@ -5,6 +5,7 @@ include/
 lib/
 kombu/
 local/
+share/
 settings.py
 *.rdb
 *.pyc
