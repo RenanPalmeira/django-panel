@@ -18,9 +18,11 @@ class ProviderSocial(models.Model):
 
 class Social(models.Model):
 	id_social = models.AutoField(primary_key=True)
+
 	account = models.ForeignKey(Account)
 	
 	token = models.CharField(max_length=155)
+	secret = models.CharField(max_length=155)
 	username = models.CharField(max_length=155)
 
 	update_date = models.DateTimeField(auto_now=True)
@@ -28,7 +30,9 @@ class Social(models.Model):
 	status = models.SmallIntegerField(default=1)
 
 	def __unicode__(self):
-		return self.username
+		if 'username' in dir(self.account):
+			return str(self.account)
+		return self.pk
 
 	def get_absolute_url(self):
 		return 'app/'+self.slug
