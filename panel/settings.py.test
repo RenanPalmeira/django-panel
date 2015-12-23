@@ -153,6 +153,8 @@ DATABASES = {
 
 AXES_LOCKOUT_URL = '/locked/'
 
+TEST_RUNNER = 'djcelery.contrib.test_runner.CeleryTestSuiteRunner'
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
