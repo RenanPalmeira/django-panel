@@ -12,7 +12,7 @@ install:
  - "pip install -r requirements.txt"
 
 script:
- - "celery -A panel worker --loglevel=info -D"
  - "mv panel/settings.py.test panel/settings.py"
+ - "celery -A panel worker --loglevel=info -D"
  - "python manage.py test"
  - "ps auxww | grep 'celery worker' | awk '{print $2}' | xargs kill -9"
