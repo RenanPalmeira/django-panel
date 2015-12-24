@@ -157,7 +157,7 @@ TEST_RUNNER = 'djcelery.contrib.test_runner.CeleryTestSuiteRunner'
 
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': True,
+    'disable_existing_loggers': False,
     'formatters': {
         'simple': {
             'format': '[%(levelname)s %(asctime)s] %(module)s  %(message)s'
